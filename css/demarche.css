@@ -1,0 +1,464 @@
+/* ==========================================================================
+   Onglet 2 — Démarche
+   ========================================================================== */
+
+/* ---------- Pastilles des membres (initiales) ---------- */
+.avatar {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Blanc sur ces teintes : contraste ≥ 4,5:1 */
+.avatar--0 { background: var(--bleu-700); }
+.avatar--1 { background: var(--vert-600); }
+.avatar--2 { background: var(--orange-600); }
+.avatar--3 { background: var(--sambre-700); }
+.avatar--4 { background: var(--ardoise-700); }
+
+/* ---------- Équipe ---------- */
+.equipe {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.membre {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-m);
+  background: #fff;
+}
+
+.membre__head {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.membre h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.membre__role {
+  margin: 0.15rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.35;
+  color: var(--color-muted);
+}
+
+.membre__charge {
+  margin: auto 0 0;
+  font-size: 0.95rem;
+}
+
+.membre__charge strong {
+  color: var(--color-heading);
+}
+
+.membre__bar {
+  display: block;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--bleu-50);
+  overflow: hidden;
+}
+
+.membre__bar span {
+  display: block;
+  height: 100%;
+  border-radius: 0 4px 4px 0;
+  background: var(--sambre-400);
+}
+
+/* ---------- Avancement global ---------- */
+.avancement {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-areas:
+    "chiffre barre"
+    "chiffre legende";
+  align-items: center;
+  gap: 0.6rem 1.75rem;
+  margin-bottom: 1.75rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-m);
+  background: var(--color-bg-alt);
+}
+
+.avancement__chiffre {
+  grid-area: chiffre;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 6vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-primary);
+}
+
+.avancement__chiffre span {
+  display: block;
+  margin-top: 0.3rem;
+  font-family: var(--font-text);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+/* Barre empilée : un segment par état, séparés par 2px */
+.avancement__barre {
+  grid-area: barre;
+  display: flex;
+  gap: 2px;
+  height: 14px;
+}
+
+.avancement__barre span {
+  flex-basis: 0;
+  min-width: 0;
+}
+
+.avancement__barre span:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.avancement__barre span:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+.avancement__barre .is-fait { background: var(--vert-600); }
+.avancement__barre .is-cours { background: var(--soleil-300); }
+.avancement__barre .is-afaire { background: var(--ardoise-100); }
+
+.avancement__legende {
+  grid-area: legende;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.avancement__total {
+  font-size: 0.95rem;
+  color: var(--color-muted);
+}
+
+/* ---------- Filtres ---------- */
+.filtres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.filtres__groupe {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+}
+
+.filtres__label {
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+.filtres__boutons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.filtre {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 2.4rem;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: #fff;
+  font: 600 0.9375rem var(--font-text);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.filtre:hover {
+  border-color: var(--bleu-200);
+  background: var(--bleu-50);
+}
+
+.filtre[aria-pressed="true"] {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.filtre__n {
+  font-weight: 400;
+  color: var(--color-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.filtre[aria-pressed="true"] .filtre__n {
+  color: var(--bleu-100);
+}
+
+.taches__compte {
+  min-height: 1.6em;
+  margin: 0 0 0.75rem;
+  color: var(--color-muted);
+}
+
+/* ---------- Tableau des tâches ---------- */
+.taches thead th:nth-child(1) { width: 4.5rem; }
+.taches thead th:nth-child(3) { width: 15rem; }
+.taches thead th:nth-child(4) { width: 9rem; }
+
+.table-wrap .taches td {
+  vertical-align: middle;
+}
+
+.taches__titre th {
+  padding-block: 0.75rem;
+  background: var(--bleu-50);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+/* Les lignes de titre d'étape ne sont jamais les dernières d'un tableau */
+.table-wrap .taches tbody tr:last-child > * {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.table-wrap .taches tbody:last-child tr:last-child > * {
+  border-bottom: 0;
+}
+
+.taches__num-etape {
+  display: inline-grid;
+  place-items: center;
+  width: 1.7rem;
+  height: 1.7rem;
+  margin-right: 0.6rem;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 0.95rem;
+  vertical-align: 0.05em;
+}
+
+.taches__ratio {
+  float: right;
+  font-family: var(--font-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-muted);
+}
+
+.taches__num {
+  font-weight: 600;
+  color: var(--color-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.taches__intitule {
+  color: var(--color-heading);
+}
+
+/* Un responsable par ligne (la cellule garde son affichage de tableau) */
+.qui {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+}
+
+.qui + .qui {
+  margin-top: 0.3rem;
+}
+
+.qui .avatar {
+  width: 1.6rem;
+  height: 1.6rem;
+  font-size: 0.7rem;
+}
+
+.qui--groupe {
+  font-style: italic;
+  color: var(--color-muted);
+}
+
+.taches__noscript {
+  margin: 0;
+  padding: 1rem;
+}
+
+/* Petit écran : chaque tâche devient une carte */
+@media (max-width: 44rem) {
+  .taches,
+  .taches tbody,
+  .taches tr,
+  .taches th,
+  .taches td {
+    display: block;
+  }
+
+  .taches tbody[hidden],
+  .taches tr[hidden] {
+    display: none;
+  }
+
+  .taches thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  .taches__ligne {
+    display: grid !important;
+    grid-template-columns: 2.75rem minmax(0, 1fr);
+    grid-template-areas:
+      "num intitule"
+      ". qui"
+      ". etat";
+    gap: 0.35rem 0.5rem;
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .taches__ligne[hidden] {
+    display: none !important;
+  }
+
+  .table-wrap .taches td {
+    padding: 0;
+    border: 0;
+  }
+
+  .table-wrap .taches tbody tr:last-child > * {
+    border-bottom: 0;
+  }
+
+  .taches__num { grid-area: num; }
+  .taches__intitule { grid-area: intitule; font-weight: 600; }
+  .taches__qui { grid-area: qui; }
+  .taches__etat { grid-area: etat; }
+
+  .taches__ratio {
+    float: none;
+    display: block;
+    margin-top: 0.2rem;
+    padding-left: 2.3rem;
+  }
+}
+
+/* ---------- Choix et difficultés ---------- */
+.choix {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.choix__item {
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-m);
+  background: #fff;
+}
+
+.choix__item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+}
+
+.choix__item p {
+  margin: 0 0 0.6rem;
+}
+
+.choix__item p:last-child {
+  margin-bottom: 0;
+}
+
+.choix__tag {
+  display: inline-block;
+  margin-right: 0.35rem;
+  padding: 0.05rem 0.5rem;
+  border-radius: var(--radius-s);
+  background: var(--orange-50);
+  color: var(--orange-700);
+  box-shadow: inset 0 0 0 1px var(--orange-100);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.choix__tag--ok {
+  background: var(--vert-50);
+  color: var(--vert-700);
+  box-shadow: inset 0 0 0 1px var(--vert-100);
+}
+
+/* ---------- Outils ---------- */
+.outils {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: 0;
+  margin: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.outils > div {
+  padding: 1rem 1.25rem 1rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.outils dt {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+.outils dd {
+  margin: 0.2rem 0 0;
+  font-size: 0.975rem;
+  color: var(--color-muted);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 48rem) {
+  .choix {
+    grid-template-columns: 1fr;
+  }
+
+  .avancement {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "chiffre"
+      "barre"
+      "legende";
+  }
+}

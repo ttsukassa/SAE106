@@ -1,0 +1,779 @@
+/* ==========================================================================
+   Onglet 5 — Découvrir Maubeuge
+   ========================================================================== */
+
+/* L'en-tête de page (.page-head) et le sommaire (.toc) sont dans style.css */
+
+/* ---------- Situation ---------- */
+.situation {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.distances {
+  margin: 0;
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-m);
+}
+
+.distances figcaption {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--color-heading);
+  margin-bottom: 1.1rem;
+}
+
+.distances ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.distances li {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr) 5rem;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.distances__lieu {
+  font-weight: 600;
+}
+
+.distances__bar {
+  height: 0.6rem;
+  border-radius: 999px;
+  background: var(--bleu-50);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Barre proportionnelle à la distance (196 km = 100 %) */
+.distances__bar::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: calc(var(--km) / 196 * 100%);
+  min-width: 0.6rem;
+  border-radius: inherit;
+  background: var(--sambre-400);
+}
+
+.distances__km {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-muted);
+}
+
+/* ---------- Frise chronologique ---------- */
+.frise {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-l);
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.frise__scroller {
+  overflow-x: auto;
+  margin-inline: calc(clamp(1.25rem, 3vw, 2rem) * -1);
+  padding-inline: clamp(1.25rem, 3vw, 2rem);
+  scrollbar-width: thin;
+}
+
+.frise__rail {
+  --n: 9;
+  --progress: 0;
+  position: relative;
+  display: flex;
+  min-width: calc(var(--n) * 6.25rem);
+  padding-block: 0.25rem 0.75rem;
+}
+
+/* Ligne de la frise, du centre du premier point au centre du dernier */
+.frise__line {
+  position: absolute;
+  top: calc(0.25rem + 1.35rem);
+  left: calc(100% / (var(--n) * 2));
+  right: calc(100% / (var(--n) * 2));
+  height: 4px;
+  margin-top: -2px;
+  border-radius: 2px;
+  background: var(--color-border);
+}
+
+.frise__fill {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--gradient-arc);
+  transform-origin: left center;
+  transform: scaleX(var(--progress));
+  transition: transform 0.45s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.frise__tab {
+  position: relative;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.5rem 0.25rem;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--color-muted);
+  cursor: pointer;
+}
+
+.frise__dot {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.3rem;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--ardoise-300);
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.frise__date {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.frise__tab:hover .frise__dot {
+  border-color: var(--color-primary);
+}
+
+.frise__tab:hover {
+  color: var(--color-primary);
+}
+
+.frise__tab.is-past .frise__dot {
+  background: var(--soleil-300);
+  border-color: var(--soleil-300);
+}
+
+.frise__tab[aria-selected="true"] {
+  color: var(--color-primary);
+}
+
+.frise__tab[aria-selected="true"] .frise__dot {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: scale(1.35);
+  box-shadow: 0 0 0 5px var(--bleu-100);
+}
+
+.frise__panel {
+  display: grid;
+  grid-template-columns: minmax(9rem, 15.5rem) minmax(0, 1fr);
+  gap: clamp(1rem, 4vw, 3rem);
+  margin-top: 1.25rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--color-border);
+  min-height: 13rem;
+}
+
+.frise__when {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--color-primary);
+}
+
+.frise__panel h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.frise__panel p {
+  max-width: 62ch;
+}
+
+.frise__panel.is-entering > * {
+  animation: glisser 0.35s ease both;
+}
+
+@keyframes glisser {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+.frise__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.frise__count {
+  font-variant-numeric: tabular-nums;
+  color: var(--color-muted);
+}
+
+/* ---------- Carte interactive ---------- */
+.explorer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 21rem;
+  grid-template-areas:
+    "map side"
+    "detail side";
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.explorer__map {
+  grid-area: map;
+}
+
+.explorer__side {
+  grid-area: side;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.place-detail {
+  grid-area: detail;
+}
+
+.map {
+  height: clamp(22rem, 55vh, 32rem);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-m);
+  background: var(--bleu-50);
+  overflow: hidden;
+  z-index: 0;
+}
+
+.map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.map__fallback {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  margin: 0;
+  padding: 2rem;
+  text-align: center;
+  color: var(--color-muted);
+}
+
+/* Filtres */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: #fff;
+  font: 600 0.9375rem var(--font-text);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.filter__dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  flex: none;
+}
+
+.filter__count {
+  color: var(--color-muted);
+  font-weight: 400;
+}
+
+.filter:hover {
+  border-color: var(--bleu-200);
+  background: var(--bleu-50);
+}
+
+.filter[aria-pressed="true"] {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+.filter[aria-pressed="true"] .filter__count {
+  color: var(--bleu-100);
+}
+
+.filter[aria-pressed="true"] .filter__dot {
+  box-shadow: 0 0 0 2px #fff;
+}
+
+/* Liste des lieux */
+.places {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.places li {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.place {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.15rem;
+  width: 100%;
+  padding: 0.8rem 0.75rem;
+  border: 0;
+  border-radius: var(--radius-s);
+  background: none;
+  font: inherit;
+  text-align: left;
+  color: var(--color-heading);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.place__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.075rem;
+  line-height: 1.3;
+}
+
+.place:hover {
+  background: var(--bleu-50);
+}
+
+.place[aria-pressed="true"] {
+  background: var(--soleil-50);
+  box-shadow: inset 0 0 0 2px var(--soleil-300);
+}
+
+/* Fiche du lieu */
+.place-detail {
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-m);
+  background: var(--color-bg-alt);
+}
+
+.place-detail h3 {
+  font-size: 1.6rem;
+  margin: 0.5rem 0 0.25rem;
+}
+
+.place-detail__meta {
+  color: var(--color-muted);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.place-detail__text {
+  max-width: 65ch;
+}
+
+.place-detail figure {
+  margin: 0 0 1rem;
+}
+
+.place-detail figure img {
+  width: 100%;
+  max-height: 20rem;
+  object-fit: cover;
+  border-radius: var(--radius-s);
+}
+
+.place-detail figcaption {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  margin-top: 0.35rem;
+}
+
+.place-detail__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+/* ---------- Culture ---------- */
+.culture {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.culture__stories {
+  display: grid;
+  gap: 2rem;
+}
+
+.story h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.4rem;
+}
+
+.story p {
+  max-width: 60ch;
+  margin-bottom: 0.5rem;
+}
+
+.story a {
+  font-weight: 600;
+}
+
+.agenda {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-m);
+  padding: 1.5rem;
+}
+
+.agenda h3 {
+  font-size: 1.25rem;
+}
+
+.agenda__list {
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+}
+
+.agenda__list li {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr);
+  gap: 1rem;
+  padding-block: 0.9rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.agenda__mois {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--orange-700);
+}
+
+.agenda__list p {
+  margin: 0 0 0.4rem;
+}
+
+.agenda__list p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Gastronomie ---------- */
+.plats {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.plat__icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-bottom: 0.9rem;
+}
+
+.plat h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+/* ---------- Quiz ---------- */
+.quiz {
+  max-width: 46rem;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-l);
+  padding: clamp(1.25rem, 4vw, 2.25rem);
+}
+
+.frise__static {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.frise__static details,
+.quiz details {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-s);
+  background: #fff;
+  padding: 0.9rem 1rem;
+}
+
+.frise__static summary,
+.quiz summary {
+  color: var(--color-heading);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.frise__static details p,
+.quiz details p {
+  margin: 0.7rem 0 0;
+  color: var(--color-muted);
+}
+
+.quiz {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.quiz__progress {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  color: var(--color-muted);
+  margin-bottom: 0.5rem;
+}
+
+.quiz__bar {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--bleu-50);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.quiz__bar span {
+  display: block;
+  height: 100%;
+  background: var(--gradient-arc);
+  border-radius: inherit;
+  transition: width 0.4s ease;
+}
+
+.quiz__question {
+  font-size: 1.45rem;
+  margin-bottom: 1.25rem;
+}
+
+.quiz__question:focus {
+  outline: none;
+}
+
+.quiz__options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.quiz__option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 3.25rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-m);
+  background: #fff;
+  font: 600 1.0625rem var(--font-text);
+  color: var(--color-heading);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.quiz__option:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  background: var(--bleu-50);
+}
+
+.quiz__option:disabled {
+  cursor: default;
+  color: var(--color-muted);
+}
+
+.quiz__option.is-correct {
+  border-color: var(--vert-600);
+  background: var(--vert-50);
+  color: var(--vert-700);
+}
+
+.quiz__option.is-wrong {
+  border-color: var(--color-danger);
+  background: #FEF3F2;
+  color: var(--color-danger);
+}
+
+.quiz__option.is-correct::after,
+.quiz__option.is-wrong::after {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.quiz__option.is-correct::after {
+  content: "✓";
+  background: var(--vert-600);
+}
+
+.quiz__option.is-wrong::after {
+  content: "✕";
+  background: var(--color-danger);
+}
+
+.quiz__feedback:not(:empty) {
+  margin-top: 1.25rem;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-m);
+  background: var(--color-bg-alt);
+}
+
+.quiz__feedback p {
+  margin: 0;
+}
+
+.quiz__verdict {
+  font-weight: 700;
+  margin-bottom: 0.3rem !important;
+}
+
+.quiz__verdict.is-ok { color: var(--vert-700); }
+.quiz__verdict.is-ko { color: var(--color-danger); }
+
+.quiz__actions {
+  margin-top: 1.25rem;
+}
+
+.quiz__actions:empty {
+  display: none;
+}
+
+.quiz__score {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 9vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-primary);
+  margin: 0.5rem 0 1rem;
+}
+
+.quiz__score span {
+  font-size: 0.45em;
+  color: var(--color-muted);
+  font-weight: 600;
+}
+
+/* ---------- Sources ---------- */
+.sources {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 clamp(2rem, 5vw, 4rem);
+}
+
+.sources h3 {
+  font-size: 1.1rem;
+  margin: 1.5rem 0 0.6rem;
+}
+
+.sources > div > h3:first-child {
+  margin-top: 0;
+}
+
+.sources ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.975rem;
+}
+
+.sources li {
+  margin-bottom: 0.45rem;
+}
+
+.sources a {
+  overflow-wrap: anywhere;
+}
+
+.sources__credits {
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 60rem) {
+  .explorer {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "map"
+      "side"
+      "detail";
+  }
+
+  .plats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 52rem) {
+  .situation,
+  .culture,
+  .sources {
+    grid-template-columns: 1fr;
+  }
+
+  .frise__panel {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 36rem) {
+  .quiz__options {
+    grid-template-columns: 1fr;
+  }
+
+  .plats {
+    grid-template-columns: 1fr;
+  }
+
+  .distances li {
+    grid-template-columns: 7.5rem minmax(0, 1fr) 4.5rem;
+  }
+
+  .frise__controls .btn {
+    padding-inline: 0.8rem;
+    font-size: 0.975rem;
+  }
+
+  .agenda__list li {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+}
