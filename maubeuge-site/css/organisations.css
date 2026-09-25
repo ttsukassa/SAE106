@@ -1,0 +1,300 @@
+/* ==========================================================================
+   Onglet 1 — Organisations
+   ========================================================================== */
+
+/* ---------- En-tête de fiche ---------- */
+.org__head {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 1.75rem);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+/* Emplacement du logo (monogramme en attendant le logo officiel) */
+.org__logo,
+.org__logo-img {
+  flex: none;
+  width: clamp(4.5rem, 10vw, 6rem);
+  height: clamp(4.5rem, 10vw, 6rem);
+  border-radius: var(--radius-m);
+}
+
+.org__logo {
+  display: grid;
+  place-items: center;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.org__logo--ampere {
+  background: var(--bleu-700);
+  color: #fff;
+}
+
+.org__logo--zoo {
+  background: var(--vert-100);
+  color: var(--vert-700);
+}
+
+.org__logo-img {
+  object-fit: contain;
+  padding: 0.5rem;
+  background: #fff;
+  border: 1px solid var(--color-border);
+}
+
+.org__type {
+  margin: 0 0 0.35rem;
+}
+
+.org__head h2 {
+  margin-bottom: 0.35rem;
+}
+
+.org__aka {
+  max-width: 62ch;
+  margin: 0;
+  color: var(--color-muted);
+}
+
+/* ---------- Corps de fiche ---------- */
+.org__grid {
+  display: grid;
+  grid-template-columns: minmax(16rem, 21rem) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.org__card {
+  position: sticky;
+  top: calc(var(--header-h) + 1.5rem);
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-m);
+  background: #fff;
+}
+
+.org__card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+}
+
+.org__card address {
+  font-style: normal;
+  margin-bottom: 1rem;
+}
+
+.org__card .btn {
+  width: 100%;
+}
+
+.org__muted {
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.org__facts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.25rem;
+  margin: 1.5rem 0 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.org__facts dt {
+  font-size: 0.875rem;
+  color: var(--color-muted);
+}
+
+.org__facts dd {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-heading);
+}
+
+.org__facts dd small {
+  display: block;
+  margin-top: 0.15rem;
+  font-family: var(--font-text);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--color-muted);
+}
+
+.org__main {
+  display: grid;
+  gap: clamp(2rem, 4vw, 2.75rem);
+  min-width: 0;
+}
+
+.org__main h3 {
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.org__main p {
+  max-width: 68ch;
+}
+
+/* Activités */
+.activites {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.activites li + li {
+  margin-top: 0.35rem;
+}
+
+.activites li::marker {
+  color: var(--vert-600);
+}
+
+/* Impact : une idée par ligne, mot-clé en gras */
+.impacts {
+  display: grid;
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.impacts li {
+  position: relative;
+  max-width: 68ch;
+  padding-left: 1.5rem;
+}
+
+.impacts li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: var(--color-highlight);
+}
+
+.impacts strong {
+  color: var(--color-heading);
+}
+
+/* Repères chronologiques */
+.reperes {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-left: 3px solid var(--bleu-100);
+}
+
+.reperes li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 4.75rem minmax(0, 1fr);
+  gap: 0.75rem;
+  padding: 0.35rem 0 0.35rem 1.25rem;
+}
+
+.reperes li::before {
+  content: "";
+  position: absolute;
+  left: calc(-0.35rem - 1.5px);
+  top: 0.85rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--color-primary);
+}
+
+.reperes__date {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Tableau « Côte à côte » ---------- */
+.compare th[scope="row"] {
+  width: 12rem;
+  font-weight: 600;
+  color: var(--color-heading);
+}
+
+.compare thead th {
+  width: calc((100% - 12rem) / 2);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 60rem) {
+  .org__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .org__card {
+    position: static;
+  }
+
+  .org__card .btn {
+    width: auto;
+  }
+}
+
+/* Petit écran : chaque ligne du tableau devient une carte */
+@media (max-width: 44rem) {
+  .compare,
+  .compare tbody,
+  .compare tr,
+  .compare th,
+  .compare td {
+    display: block;
+    width: auto;
+  }
+
+  .compare thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  .compare tr {
+    padding-block: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .compare tbody tr:last-child {
+    border-bottom: 0;
+  }
+
+  .table-wrap .compare th,
+  .table-wrap .compare td {
+    padding-block: 0.35rem;
+    border-bottom: 0;
+  }
+
+  .compare th[scope="row"] {
+    width: auto;
+    font-family: var(--font-display);
+  }
+
+  .compare td::before {
+    content: attr(data-org) " : ";
+    font-weight: 600;
+    color: var(--color-heading);
+  }
+}
+
+@media (max-width: 36rem) {
+  .org__head {
+    align-items: flex-start;
+  }
+}
