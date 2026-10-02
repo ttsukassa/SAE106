@@ -47,344 +47,258 @@
     </div>
   </header>
 
-  <main id="contenu">
+  <main id="contenu" class="empreinte">
 
-    <!-- ============ EN-TÊTE DE PAGE ============ -->
-    <section class="page-head">
-      <div class="wrap">
-        <p class="page-head__kicker"><span class="page-head__num" aria-hidden="true">3</span>Onglet 3 sur 5</p>
-        <h1>Empreinte écologique</h1>
-        <p class="page-head__lead">
-          Que font la <a href="organisations.html#ampere">Manufacture Ampère</a> et le
-          <a href="organisations.html#zoo">Zoo de Maubeuge</a> pour réduire leur impact sur
-          l’environnement&nbsp;? Nous avons comparé leurs actions domaine par domaine, puis
-          rassemblé d’autres pistes dans une carte mentale.
-        </p>
-        <nav class="toc" aria-label="Sur cette page">
-          <ul>
-            <li><a href="#tableau">Tableau comparatif</a></li>
-            <li><a href="#analyse">Notre analyse</a></li>
-            <li><a href="#carte-mentale">Carte mentale</a></li>
-            <li><a href="#sources">Sources</a></li>
-          </ul>
-        </nav>
+    <h1>Empreinte écologique</h1>
+    <p class="intro">
+      Que font la <a href="organisations.html#ampere">Manufacture Ampère</a> et le
+      <a href="organisations.html#zoo">Zoo de Maubeuge</a> pour réduire leur impact sur
+      l'environnement ? On a comparé leurs actions domaine par domaine, puis on a
+      rassemblé d'autres idées dans une carte mentale.
+    </p>
+
+    <p class="sommaire">
+      Sur cette page :
+      <a href="#tableau">Tableau comparatif</a> -
+      <a href="#analyse">Notre analyse</a> -
+      <a href="#carte-mentale">Carte mentale</a> -
+      <a href="#sources">Sources</a>
+    </p>
+
+    <!-- TABLEAU COMPARATIF -->
+    <h2 id="tableau">1. Les actions, domaine par domaine</h2>
+    <p>
+      Chaque case résume ce qu'on a trouvé dans des sources publiques. "Rien de publié"
+      ne veut pas dire que rien n'est fait, seulement qu'on n'a trouvé aucune information vérifiable.
+    </p>
+
+    <p class="bilan">
+      <b>Bilan :</b> Manufacture Ampère = <b>5 domaines sur 7</b> avec des actions documentées.
+      Zoo de Maubeuge = <b>2 domaines sur 7</b> avec des actions documentées, et 1 en partie.
+    </p>
+
+    <p class="legende">
+      Légende :
+      <span class="oui">Action documentée</span>
+      <span class="partiel">En partie</span>
+      <span class="non">Rien de publié</span>
+    </p>
+
+    <div class="tableau-scroll">
+      <table class="comparatif">
+        <tr>
+          <th>Domaine</th>
+          <th>Manufacture Ampère</th>
+          <th>Zoo de Maubeuge</th>
+        </tr>
+        <tr>
+          <th>Management environnemental</th>
+          <td class="oui">
+            Certifiée <b>ISO 14001</b> (management de l'environnement) et <b>ISO 50001</b> (management de l'énergie).
+            <br><i>Source : Renault Group</i>
+          </td>
+          <td class="partiel">
+            Membre de l'EAZA et de l'AFdPZ, les associations des zoos. Pas de certification environnementale publiée, alors que d'autres zoos français sont certifiés ISO 14001.
+            <br><i>Source : Wikipédia, AFdPZ</i>
+          </td>
+        </tr>
+        <tr>
+          <th>Énergie</th>
+          <td class="oui">
+            <b>79 000 m²</b> d'ombrières photovoltaïques sur les parkings depuis 2012. Les fours de peinture sont chauffés à la <b>biomasse</b> (Dalkia). Les consommations sont suivies en continu par des outils numériques.
+            <br><i>Source : France 3, LeMagIT, Renault Group</i>
+          </td>
+          <td class="non">
+            Aucune information sur le chauffage des bâtiments des animaux ni sur l'électricité utilisée.
+          </td>
+        </tr>
+        <tr>
+          <th>Eau</th>
+          <td class="oui">
+            Recyclage des <b>eaux de pluie</b> depuis 2000.
+            <br><i>Source : France 3</i>
+          </td>
+          <td class="non">
+            Aucune information sur l'eau des bassins ou l'arrosage.
+          </td>
+        </tr>
+        <tr>
+          <th>Déchets et ressources</th>
+          <td class="oui">
+            La biomasse des fours vient de <b>déchets de bois</b> (scieries, forêts, fabricants de palettes) : un déchet devient une source d'énergie.
+            <br><i>Source : LeMagIT</i>
+          </td>
+          <td class="non">
+            Aucune information sur le fumier, les déchets verts ou le tri.
+          </td>
+        </tr>
+        <tr>
+          <th>Biodiversité</th>
+          <td class="non">
+            Aucune information sur la gestion des espaces verts d'un site de 83,6 ha.
+          </td>
+          <td class="oui">
+            Participe à plus de <b>20 programmes européens</b> d'élevage d'espèces menacées. <b>20 centimes</b> par entrée adulte financent la conservation, surtout celle des girafes du Niger (ASGN).
+            <br><i>Source : Wikipédia, Ville de Maubeuge</i>
+          </td>
+        </tr>
+        <tr>
+          <th>Sensibilisation</th>
+          <td class="non">
+            Aucune action publiée à destination des habitants ou des écoles.
+          </td>
+          <td class="oui">
+            <b>Ateliers pédagogiques</b> pour les écoles et <b>Ferme du Zoo</b> avec un rucher. Le directeur voit le zoo comme "un vecteur pédagogique pour la protection des milieux".
+            <br><i>Source : Zoo de Maubeuge, Ville de Maubeuge, ICI Nord</i>
+          </td>
+        </tr>
+        <tr>
+          <th>Produits et services</th>
+          <td class="oui">
+            Assemble des véhicules électriques depuis 2011 : plus de <b>36 500</b> en 2025 (Renault 4 et Kangoo E-Tech), soit environ un véhicule sur quatre.
+            <br><i>Source : Renault Group</i>
+          </td>
+          <td class="non">
+            Pas d'offre mise en avant pour venir sans voiture ou pour une restauration locale.
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ANALYSE -->
+    <h2 id="analyse">2. Ce que montre le tableau</h2>
+    <p>Deux organisations, deux manières très différentes d'agir pour l'environnement.</p>
+
+    <h3>L'usine agit sur son fonctionnement</h3>
+    <p>
+      Une usine automobile consomme beaucoup d'énergie, notamment pour ses fours de peinture.
+      C'est donc logiquement là qu'Ampère concentre ses efforts : énergie solaire, biomasse,
+      eau de pluie, et des normes ISO qui l'obligent à mesurer ses impacts et à s'améliorer en continu.
+    </p>
+    <p>
+      Sa deuxième réponse est son produit : la voiture électrique. Selon l'ADEME, sur toute sa
+      durée de vie, une voiture électrique roulant en France a un impact sur le climat deux à trois
+      fois plus faible qu'un modèle thermique équivalent, <b>à condition que sa batterie reste de
+      taille raisonnable</b>. La fabrication de la batterie pèse en effet lourd dans son bilan.
+    </p>
+
+    <h3>Le zoo agit au-delà de ses murs</h3>
+    <p>
+      Le zoo mise sur la protection des espèces menacées et sur l'éducation du public : des actions
+      qui ne réduisent pas son empreinte directe, mais qui touchent un large public (165 000 visiteurs
+      en 2022, des familles comme des classes).
+    </p>
+    <p>
+      Par contre, il ne publie presque rien sur son propre fonctionnement. Un zoo chauffe pourtant
+      des bâtiments pour des animaux tropicaux, remplit des bassins et produit beaucoup de fumier.
+      D'autres parcs français montrent l'exemple : méthanisation du fumier au ZooParc de Beauval depuis
+      2014, certification ISO 14001 au zoo de Lyon.
+    </p>
+
+    <div class="attention">
+      <h3>Attention au "marketing vert"</h3>
+      <p>
+        Une grande partie des informations sur l'usine vient de Renault Group lui-même. Une entreprise
+        a intérêt à mettre en avant ses actions écologiques pour valoriser son image : c'est le
+        marketing vert. On a donc croisé ces informations avec des médias (France 3, LeMagIT)
+        quand c'était possible, et on indique toujours d'où vient chaque chiffre.
+      </p>
+    </div>
+
+    <!-- CARTE MENTALE -->
+    <h2 id="carte-mentale">3. D'autres moyens de réduire l'impact écologique</h2>
+    <p>
+      Des idées que les deux organisations pourraient essayer, inspirées de ce que font d'autres
+      structures.
+    </p>
+
+    <p class="centre-carte">Réduire l'impact écologique</p>
+
+    <div class="carte">
+      <div class="branche">
+        <h3>Énergie</h3>
+        <ul>
+          <li>Panneaux solaires sur les toits des bâtiments du zoo</li>
+          <li>Chaudière bois ou pompe à chaleur pour les bâtiments chauffés</li>
+          <li>Isolants biosourcés (chanvre, ouate de cellulose)</li>
+          <li>Éclairage LED, appareils éteints plutôt qu'en veille</li>
+        </ul>
       </div>
-    </section>
-
-    <!-- ============ TABLEAU COMPARATIF ============ -->
-    <section id="tableau" class="section" aria-labelledby="tableau-titre">
-      <div class="wrap">
-        <h2 id="tableau-titre">Les actions, domaine par domaine</h2>
-        <p class="section__intro">
-          Chaque case résume ce que nous avons trouvé dans des sources publiques. «&nbsp;Rien de publié&nbsp;»
-          ne veut pas dire que rien n’est fait, seulement que nous n’avons trouvé aucune information vérifiable.
-        </p>
-
-        <!-- Bilan : à mettre à jour si le tableau change -->
-        <div class="scores" aria-label="Bilan du tableau">
-          <div class="score">
-            <p class="score__name">Manufacture Ampère</p>
-            <p class="score__value">5 <span>domaines sur 7</span></p>
-            <ol class="score__dots" aria-hidden="true">
-              <li class="is-done"></li><li class="is-done"></li><li class="is-done"></li><li class="is-done"></li><li></li><li></li><li class="is-done"></li>
-            </ol>
-            <p class="score__note">avec des actions documentées</p>
-          </div>
-          <div class="score">
-            <p class="score__name">Zoo de Maubeuge</p>
-            <p class="score__value">2 <span>domaines sur 7</span></p>
-            <ol class="score__dots" aria-hidden="true">
-              <li class="is-part"></li><li></li><li></li><li></li><li class="is-done"></li><li class="is-done"></li><li></li>
-            </ol>
-            <p class="score__note">avec des actions documentées, et 1 en partie</p>
-          </div>
-          <p class="scores__legend">
-            <span class="status status--done">Action documentée</span>
-            <span class="status status--doing">En partie</span>
-            <span class="status status--todo">Rien de publié</span>
-          </p>
-        </div>
-
-        <div class="table-wrap">
-          <table class="eco">
-            <caption class="sr-only">Actions de la Manufacture Ampère et du Zoo de Maubeuge pour réduire leur empreinte environnementale</caption>
-            <thead>
-              <tr>
-                <th scope="col">Domaine</th>
-                <th scope="col">Manufacture Ampère</th>
-                <th scope="col">Zoo de Maubeuge</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">Management environnemental</th>
-                <td data-org="Manufacture Ampère">
-                  <span class="status status--done">Action documentée</span>
-                  <p>Certifiée <strong>ISO 14001</strong> (management de l’environnement) et <strong>ISO 50001</strong> (management de l’énergie).</p>
-                  <p class="eco__src">Renault Group</p>
-                </td>
-                <td data-org="Zoo de Maubeuge">
-                  <span class="status status--doing">En partie</span>
-                  <p>Membre de l’EAZA et de l’AFdPZ, les associations des zoos. Pas de certification environnementale publiée, alors que d’autres zoos français sont certifiés ISO&nbsp;14001.</p>
-                  <p class="eco__src">Wikipédia, AFdPZ</p>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Énergie</th>
-                <td data-org="Manufacture Ampère">
-                  <span class="status status--done">Action documentée</span>
-                  <p><strong>79&nbsp;000&nbsp;m²</strong> d’ombrières photovoltaïques sur les parkings depuis 2012. Les fours de peinture sont chauffés à la <strong>biomasse</strong> (Dalkia). Les consommations sont suivies en continu par des outils numériques.</p>
-                  <p class="eco__src">France 3, LeMagIT, Renault Group</p>
-                </td>
-                <td data-org="Zoo de Maubeuge">
-                  <span class="status status--todo">Rien de publié</span>
-                  <p>Aucune information sur le chauffage des bâtiments des animaux ni sur l’électricité utilisée.</p>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Eau</th>
-                <td data-org="Manufacture Ampère">
-                  <span class="status status--done">Action documentée</span>
-                  <p>Recyclage des <strong>eaux de pluie</strong> depuis 2000.</p>
-                  <p class="eco__src">France 3</p>
-                </td>
-                <td data-org="Zoo de Maubeuge">
-                  <span class="status status--todo">Rien de publié</span>
-                  <p>Aucune information sur l’eau des bassins ou l’arrosage.</p>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Déchets et ressources</th>
-                <td data-org="Manufacture Ampère">
-                  <span class="status status--done">Action documentée</span>
-                  <p>La biomasse des fours vient de <strong>déchets de bois</strong> (scieries, forêts, fabricants de palettes)&nbsp;: un déchet devient une source d’énergie.</p>
-                  <p class="eco__src">LeMagIT</p>
-                </td>
-                <td data-org="Zoo de Maubeuge">
-                  <span class="status status--todo">Rien de publié</span>
-                  <p>Aucune information sur le fumier, les déchets verts ou le tri.</p>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Biodiversité</th>
-                <td data-org="Manufacture Ampère">
-                  <span class="status status--todo">Rien de publié</span>
-                  <p>Aucune information sur la gestion des espaces verts d’un site de 83,6&nbsp;ha.</p>
-                </td>
-                <td data-org="Zoo de Maubeuge">
-                  <span class="status status--done">Action documentée</span>
-                  <p>Participe à plus de <strong>20 programmes européens</strong> d’élevage d’espèces menacées. <strong>20&nbsp;centimes</strong> par entrée adulte financent la conservation, surtout celle des girafes du Niger (ASGN).</p>
-                  <p class="eco__src">Wikipédia, Ville de Maubeuge</p>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Sensibilisation</th>
-                <td data-org="Manufacture Ampère">
-                  <span class="status status--todo">Rien de publié</span>
-                  <p>Aucune action publiée à destination des habitants ou des écoles.</p>
-                </td>
-                <td data-org="Zoo de Maubeuge">
-                  <span class="status status--done">Action documentée</span>
-                  <p><strong>Ateliers pédagogiques</strong> pour les écoles et <strong>Ferme du Zoo</strong> avec un rucher. Le directeur voit le zoo comme «&nbsp;un vecteur pédagogique pour la protection des milieux&nbsp;».</p>
-                  <p class="eco__src">Zoo de Maubeuge, Ville de Maubeuge, ICI Nord</p>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">Produits et services</th>
-                <td data-org="Manufacture Ampère">
-                  <span class="status status--done">Action documentée</span>
-                  <p>Assemble des véhicules électriques depuis 2011&nbsp;: plus de <strong>36&nbsp;500</strong> en 2025 (Renault&nbsp;4 et Kangoo E-Tech), soit environ un véhicule sur quatre.</p>
-                  <p class="eco__src">Renault Group</p>
-                </td>
-                <td data-org="Zoo de Maubeuge">
-                  <span class="status status--todo">Rien de publié</span>
-                  <p>Pas d’offre mise en avant pour venir sans voiture ou pour une restauration locale.</p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="branche">
+        <h3>Eau</h3>
+        <ul>
+          <li>Récupérer l'eau de pluie pour nettoyer et arroser, comme le fait déjà l'usine</li>
+          <li>Épurer l'eau des bassins par les plantes (phytoépuration)</li>
+          <li>Choisir des plantes adaptées au climat, qui demandent moins d'arrosage</li>
+        </ul>
       </div>
-    </section>
-
-    <!-- ============ ANALYSE ============ -->
-    <section id="analyse" class="section section--alt" aria-labelledby="analyse-titre">
-      <div class="wrap">
-        <h2 id="analyse-titre">Ce que montre le tableau</h2>
-        <p class="section__intro">Deux organisations, deux manières très différentes d’agir pour l’environnement.</p>
-
-        <div class="analyse">
-          <article class="analyse__bloc">
-            <h3>L’usine agit sur son fonctionnement</h3>
-            <p>
-              Une usine automobile consomme beaucoup d’énergie, notamment pour ses fours de peinture.
-              C’est donc logiquement là qu’Ampère concentre ses efforts&nbsp;: énergie solaire, biomasse,
-              eau de pluie, et des normes ISO qui l’obligent à mesurer ses impacts et à s’améliorer en continu.
-            </p>
-            <p>
-              Sa deuxième réponse est son produit&nbsp;: la voiture électrique. Selon l’ADEME, sur toute sa
-              durée de vie, une voiture électrique roulant en France a un impact sur le climat deux à trois
-              fois plus faible qu’un modèle thermique équivalent, <strong>à condition que sa batterie reste de
-              taille raisonnable</strong>. La fabrication de la batterie pèse en effet lourd dans son bilan.
-            </p>
-          </article>
-
-          <article class="analyse__bloc">
-            <h3>Le zoo agit au-delà de ses murs</h3>
-            <p>
-              Le zoo mise sur la protection des espèces menacées et sur l’éducation du public&nbsp;: des actions
-              qui ne réduisent pas son empreinte directe, mais qui touchent un large public (165&nbsp;000 visiteurs
-              en 2022, des familles comme des classes).
-            </p>
-            <p>
-              En revanche, il ne publie presque rien sur son propre fonctionnement. Un zoo chauffe pourtant
-              des bâtiments pour des animaux tropicaux, remplit des bassins et produit beaucoup de fumier.
-              D’autres parcs français montrent la voie&nbsp;: méthanisation du fumier au ZooParc de Beauval depuis
-              2014, certification ISO&nbsp;14001 au zoo de Lyon.
-            </p>
-          </article>
-
-          <aside class="analyse__alerte" aria-labelledby="alerte-titre">
-            <h3 id="alerte-titre">Attention au «&nbsp;marketing vert&nbsp;»</h3>
-            <p>
-              Une grande partie des informations sur l’usine vient de Renault Group lui-même. Une entreprise
-              a intérêt à mettre en avant ses actions écologiques pour valoriser son image&nbsp;: c’est le
-              marketing vert. Nous avons donc croisé ces informations avec des médias (France&nbsp;3, LeMagIT)
-              quand c’était possible, et nous indiquons toujours d’où vient chaque chiffre.
-            </p>
-          </aside>
-        </div>
+      <div class="branche">
+        <h3>Déchets</h3>
+        <ul>
+          <li>Transformer le fumier en énergie (méthanisation) ou en compost</li>
+          <li>Gobelets réutilisables et fin du plastique jetable à la buvette</li>
+          <li>Trier plus finement les déchets de l'usine et du parc</li>
+        </ul>
       </div>
-    </section>
-
-    <!-- ============ CARTE MENTALE ============ -->
-    <section id="carte-mentale" class="section" aria-labelledby="carte-mentale-titre">
-      <div class="wrap">
-        <h2 id="carte-mentale-titre">D’autres moyens de réduire l’impact écologique</h2>
-        <p class="section__intro">
-          Des pistes que les deux organisations pourraient explorer, inspirées de ce que font d’autres
-          structures. Les sources utilisées forment la dernière branche de la carte.
-        </p>
-
-        <div class="mindmap" data-mindmap>
-          <svg class="mindmap__links" aria-hidden="true" focusable="false"></svg>
-          <p class="mindmap__center">Réduire l’impact écologique</p>
-
-          <ul class="mindmap__col mindmap__col--left" aria-label="Pistes, première partie">
-            <li class="mindmap__branch mindmap__branch--soleil">
-              <h3 class="mindmap__title">Énergie</h3>
-              <ul>
-                <li>Panneaux solaires sur les toits des bâtiments du zoo</li>
-                <li>Chaudière bois ou pompe à chaleur pour les bâtiments chauffés</li>
-                <li>Isolants biosourcés (chanvre, ouate de cellulose)</li>
-                <li>Éclairage LED, appareils éteints plutôt qu’en veille</li>
-              </ul>
-            </li>
-            <li class="mindmap__branch mindmap__branch--sambre">
-              <h3 class="mindmap__title">Eau</h3>
-              <ul>
-                <li>Récupérer l’eau de pluie pour nettoyer et arroser, comme le fait déjà l’usine</li>
-                <li>Épurer l’eau des bassins par les plantes (phytoépuration)</li>
-                <li>Choisir des plantes adaptées au climat, qui demandent moins d’arrosage</li>
-              </ul>
-            </li>
-            <li class="mindmap__branch mindmap__branch--orange">
-              <h3 class="mindmap__title">Déchets</h3>
-              <ul>
-                <li>Transformer le fumier en énergie (méthanisation) ou en compost</li>
-                <li>Gobelets réutilisables et fin du plastique jetable à la buvette</li>
-                <li>Trier plus finement les déchets de l’usine et du parc</li>
-              </ul>
-            </li>
-          </ul>
-
-          <ul class="mindmap__col mindmap__col--right" aria-label="Pistes, deuxième partie">
-            <li class="mindmap__branch mindmap__branch--bleu">
-              <h3 class="mindmap__title">Mobilité</h3>
-              <ul>
-                <li>Plan de mobilité employeur&nbsp;: covoiturage, vélo, horaires adaptés</li>
-                <li>Forfait mobilités durables pour les salariés qui viennent à vélo ou en covoiturage</li>
-                <li>Tarif réduit au zoo pour les visiteurs venus en bus ou à vélo</li>
-              </ul>
-            </li>
-            <li class="mindmap__branch mindmap__branch--vert">
-              <h3 class="mindmap__title">Biodiversité locale</h3>
-              <ul>
-                <li>Fauche tardive, zéro pesticide, plantes locales</li>
-                <li>Nichoirs pour oiseaux, chauves-souris et insectes</li>
-                <li>Végétaliser une partie des parkings et des 83,6&nbsp;ha de l’usine</li>
-              </ul>
-            </li>
-            <li class="mindmap__branch mindmap__branch--ardoise">
-              <h3 class="mindmap__title">Sensibiliser et rendre compte</h3>
-              <ul>
-                <li>Former les salariés aux gestes économes</li>
-                <li>Ouvrir l’usine aux écoles pour expliquer ses actions</li>
-                <li>Publier chaque année un bilan environnemental chiffré</li>
-              </ul>
-            </li>
-          </ul>
-
-          <div class="mindmap__foot">
-            <div class="mindmap__branch mindmap__branch--ardoise mindmap__branch--sources">
-              <h3 class="mindmap__title">Sources utilisées</h3>
-              <ul>
-                <li>AFdPZ, <a href="https://afdpz.org/developpement-durable/">« Développement durable »</a>&nbsp;: actions des zoos français (énergie, eau, déchets, biodiversité)</li>
-                <li>Ministère de la Transition écologique, <a href="https://www.ecologie.gouv.fr/politiques-publiques/soutien-employeurs-aux-mobilites-durables">« Le soutien des employeurs aux mobilités durables »</a></li>
-                <li>ADEME, <a href="https://www.ademe.fr/presse/communique-national/mondial-de-lautomobile-lademe-publie-son-avis-sur-le-vehicule-electrique-une-batterie-de-taille-raisonnable-assure-une-pertinence-climatique-et-economique/">avis sur le véhicule électrique</a> (2022)</li>
-                <li>France 3 Hauts-de-France, <a href="https://france3-regions.franceinfo.fr/hauts-de-france/2014/03/25/mca-maubeuge-et-ses-panneaux-photovoltaiques-221311.html">« MCA Maubeuge et ses panneaux photovoltaïques »</a> (2014)</li>
-                <li>LeMagIT, <a href="https://www.lemagit.fr/etude/Comment-Renault-pilote-la-consommation-denergie-dans-ses-usines">« Comment Renault pilote la consommation d’énergie dans ses usines »</a> (2024)</li>
-                <li>Renault Group, <a href="https://www.renaultgroup.com/en/group/locations/maubeuge-mca-plant/">fiche du site de Maubeuge</a></li>
-                <li>Zoo de Maubeuge, <a href="https://www.zoodemaubeuge.fr/">site officiel</a>, et Ville de Maubeuge, <a href="https://ville-maubeuge.fr/le-zoo/">« Parcs et jardins »</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <div class="branche">
+        <h3>Mobilité</h3>
+        <ul>
+          <li>Plan de mobilité employeur : covoiturage, vélo, horaires adaptés</li>
+          <li>Forfait mobilités durables pour les salariés qui viennent à vélo ou en covoiturage</li>
+          <li>Tarif réduit au zoo pour les visiteurs venus en bus ou à vélo</li>
+        </ul>
       </div>
-    </section>
-
-    <!-- ============ SOURCES ============ -->
-    <section id="sources" class="section section--alt" aria-labelledby="sources-titre">
-      <div class="wrap">
-        <h2 id="sources-titre">Sources</h2>
-        <p class="section__intro">Documents consultés en septembre 2026 pour le tableau et l’analyse.</p>
-
-        <div class="sources-grid">
-          <div>
-            <h3>Manufacture Ampère</h3>
-            <ul>
-              <li>Renault Group, <a href="https://www.renaultgroup.com/en/group/locations/maubeuge-mca-plant/">fiche du site de Maubeuge</a> (certifications, production 2025, suivi des consommations).</li>
-              <li>France 3 Hauts-de-France, <a href="https://france3-regions.franceinfo.fr/hauts-de-france/2014/03/25/mca-maubeuge-et-ses-panneaux-photovoltaiques-221311.html">« MCA Maubeuge et ses panneaux photovoltaïques »</a>, 25 mars 2014 (ombrières, eau de pluie).</li>
-              <li>LeMagIT, <a href="https://www.lemagit.fr/etude/Comment-Renault-pilote-la-consommation-denergie-dans-ses-usines">« Comment Renault pilote la consommation d’énergie dans ses usines »</a>, 2 mai 2024 (biomasse).</li>
-              <li>ADEME, <a href="https://www.ademe.fr/presse/communique-national/mondial-de-lautomobile-lademe-publie-son-avis-sur-le-vehicule-electrique-une-batterie-de-taille-raisonnable-assure-une-pertinence-climatique-et-economique/">avis sur le véhicule électrique</a>, octobre 2022.</li>
-            </ul>
-          </div>
-          <div>
-            <h3>Zoo de Maubeuge</h3>
-            <ul>
-              <li>Wikipédia, <a href="https://fr.wikipedia.org/wiki/Zoo_de_Maubeuge">« Zoo de Maubeuge »</a> (programmes européens, adhésions).</li>
-              <li>Ville de Maubeuge, <a href="https://ville-maubeuge.fr/actualites/zoo-reouverture-le-29-mars/">« Zoo&nbsp;: réouverture le 28 mars »</a> (fonds de conservation, ASGN).</li>
-              <li>Zoo de Maubeuge, <a href="https://www.zoodemaubeuge.fr/animations-scolaires/">animations pour les scolaires</a>.</li>
-              <li>ICI Nord, <a href="https://www.ici.fr/emissions/bienvenue-chez-vous-le-dossier-du-jour-ici-nord/jimmy-ebel-le-zoo-de-maubeuge-est-un-vecteur-pedagogique-pour-la-protection-des-milieux-2291632">entretien avec Jimmy Ebel</a>, mai 2026.</li>
-              <li>AFdPZ, <a href="https://afdpz.org/developpement-durable/">« Développement durable »</a> (exemples de Beauval et du zoo de Lyon).</li>
-            </ul>
-          </div>
-        </div>
+      <div class="branche">
+        <h3>Biodiversité locale</h3>
+        <ul>
+          <li>Fauche tardive, zéro pesticide, plantes locales</li>
+          <li>Nichoirs pour oiseaux, chauves-souris et insectes</li>
+          <li>Végétaliser une partie des parkings et des 83,6 ha de l'usine</li>
+        </ul>
       </div>
-    </section>
-
-    <nav class="pager" aria-label="Onglets voisins">
-      <div class="wrap pager__inner">
-        <a class="pager__link pager__link--prev" href="demarche.html">
-          <span class="pager__dir"><span aria-hidden="true">←</span> Onglet précédent</span>
-          <span class="pager__title">2 · Démarche</span>
-        </a>
-        <a class="pager__link pager__link--next" href="charte.html">
-          <span class="pager__dir">Onglet suivant <span aria-hidden="true">→</span></span>
-          <span class="pager__title">4 · Charte numérique</span>
-        </a>
+      <div class="branche">
+        <h3>Sensibiliser et rendre compte</h3>
+        <ul>
+          <li>Former les salariés aux gestes économes</li>
+          <li>Ouvrir l'usine aux écoles pour expliquer ses actions</li>
+          <li>Publier chaque année un bilan environnemental chiffré</li>
+        </ul>
       </div>
-    </nav>
+    </div>
+
+    <!-- SOURCES -->
+    <h2 id="sources">4. Sources</h2>
+    <p>Documents consultés en septembre 2026.</p>
+
+    <h3>Manufacture Ampère</h3>
+    <ul>
+      <li>Renault Group, <a href="https://www.renaultgroup.com/en/group/locations/maubeuge-mca-plant/">fiche du site de Maubeuge</a> (certifications, production 2025, suivi des consommations).</li>
+      <li>France 3 Hauts-de-France, <a href="https://france3-regions.franceinfo.fr/hauts-de-france/2014/03/25/mca-maubeuge-et-ses-panneaux-photovoltaiques-221311.html">"MCA Maubeuge et ses panneaux photovoltaïques"</a>, 25 mars 2014 (ombrières, eau de pluie).</li>
+      <li>LeMagIT, <a href="https://www.lemagit.fr/etude/Comment-Renault-pilote-la-consommation-denergie-dans-ses-usines">"Comment Renault pilote la consommation d'énergie dans ses usines"</a>, 2 mai 2024 (biomasse).</li>
+      <li>ADEME, <a href="https://www.ademe.fr/presse/communique-national/mondial-de-lautomobile-lademe-publie-son-avis-sur-le-vehicule-electrique-une-batterie-de-taille-raisonnable-assure-une-pertinence-climatique-et-economique/">avis sur le véhicule électrique</a>, octobre 2022.</li>
+    </ul>
+
+    <h3>Zoo de Maubeuge</h3>
+    <ul>
+      <li>Wikipédia, <a href="https://fr.wikipedia.org/wiki/Zoo_de_Maubeuge">"Zoo de Maubeuge"</a> (programmes européens, adhésions).</li>
+      <li>Ville de Maubeuge, <a href="https://ville-maubeuge.fr/actualites/zoo-reouverture-le-29-mars/">"Zoo : réouverture le 28 mars"</a> (fonds de conservation, ASGN).</li>
+      <li>Zoo de Maubeuge, <a href="https://www.zoodemaubeuge.fr/animations-scolaires/">animations pour les scolaires</a>.</li>
+      <li>ICI Nord, <a href="https://www.ici.fr/emissions/bienvenue-chez-vous-le-dossier-du-jour-ici-nord/jimmy-ebel-le-zoo-de-maubeuge-est-un-vecteur-pedagogique-pour-la-protection-des-milieux-2291632">entretien avec Jimmy Ebel</a>, mai 2026.</li>
+      <li>AFdPZ, <a href="https://afdpz.org/developpement-durable/">"Développement durable"</a> (exemples de Beauval et du zoo de Lyon).</li>
+    </ul>
+
+    <h3>Carte mentale</h3>
+    <ul>
+      <li>AFdPZ, <a href="https://afdpz.org/developpement-durable/">"Développement durable"</a> : actions des zoos français (énergie, eau, déchets, biodiversité).</li>
+      <li>Ministère de la Transition écologique, <a href="https://www.ecologie.gouv.fr/politiques-publiques/soutien-employeurs-aux-mobilites-durables">"Le soutien des employeurs aux mobilités durables"</a>.</li>
+      <li>Zoo de Maubeuge, <a href="https://www.zoodemaubeuge.fr/">site officiel</a>, et Ville de Maubeuge, <a href="https://ville-maubeuge.fr/le-zoo/">"Parcs et jardins"</a>.</li>
+      <li>Et les sources de l'usine citées plus haut (France 3, LeMagIT, Renault Group, ADEME).</li>
+    </ul>
+
+    <p class="navigation">
+      <a href="demarche.html">&lt;- Page précédente : Démarche</a>
+      <a href="charte.html">Page suivante : Charte numérique -&gt;</a>
+    </p>
 
   </main>
 
