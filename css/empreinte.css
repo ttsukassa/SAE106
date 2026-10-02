@@ -105,9 +105,22 @@
 }
 
 /* Carte mentale */
+.centre {
+  width: 100%;
+  text-align: center;
+}
+
+.fleches {
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+  color: #72AD2E;
+  word-spacing: 100px;
+}
+
 .centre-carte {
   width: 300px;
-  margin: 20px auto;
+  margin: 5px auto;
   padding: 15px;
   text-align: center;
   font-weight: bold;
@@ -152,6 +165,10 @@
 
   .centre-carte {
     width: auto;
+  }
+
+  .fleches {
+    display: none;
   }
 
   .navigation {
