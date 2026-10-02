@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Découvrir Maubeuge — Notre démarche</title>
+  <meta name="description" content="Méthode de travail du projet : brainstorming initial, répartition des rôles, liste hiérarchisée des tâches avec responsables et état d’avancement.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/demarche.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <!-- ============ EN-TÊTE (identique sur toutes les pages) ============ -->
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="index.html">
+        <img class="brand__mark" src="img/logo.svg" alt="">
+        <span>Découvrir Maubeuge</span>
+      </a>
+
+      <nav id="site-nav" class="site-nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="organisations.html">Organisations</a></li>
+          <li><a href="demarche.html" aria-current="page">Démarche</a></li>
+          <li><a href="empreinte.html">Empreinte écologique</a></li>
+          <li><a href="charte.html">Charte numérique et informatique</a></li>
+          <li><a href="decouverte.html">Découverte</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <!-- ============ EN-TÊTE DE PAGE ============ -->
+    <section class="page-head">
+      <div class="wrap">
+        <p class="page-head__kicker"><span class="page-head__num" aria-hidden="true">2</span>Onglet 2 sur 5</p>
+        <h1>Notre démarche</h1>
+        <p class="page-head__lead">
+          Comment nous avons construit ce site&nbsp;: les idées de départ, qui a fait quoi,
+          et toutes les tâches dans l’ordre où nous les avons réalisées.
+        </p>
+        <nav class="toc" aria-label="Sur cette page">
+          <ul>
+            <li><a href="#brainstorming">Brainstorming</a></li>
+            <li><a href="#equipe">L’équipe</a></li>
+            <li><a href="#taches">Liste des tâches</a></li>
+            <li><a href="#choix">Choix et difficultés</a></li>
+            <li><a href="#outils">Outils</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <!-- ============ BRAINSTORMING ============ -->
+    <section id="brainstorming" class="section" aria-labelledby="brainstorming-titre">
+      <div class="wrap">
+        <h2 id="brainstorming-titre">Le brainstorming de départ</h2>
+        <p class="section__intro">
+          Lors de la première séance, nous avons noté toutes nos idées autour du sujet, puis nous les avons
+          classées en six familles. Cette carte a servi de feuille de route pour tout le projet.
+        </p>
+
+        <div class="mindmap" data-mindmap>
+          <svg class="mindmap__links" aria-hidden="true" focusable="false"></svg>
+          <p class="mindmap__center">Découvrir Maubeuge</p>
+
+          <ul class="mindmap__col mindmap__col--left" aria-label="Familles d’idées, première partie">
+            <li class="mindmap__branch mindmap__branch--orange">
+              <h3 class="mindmap__title">Idées</h3>
+              <ul>
+                <li>Une frise pour quatorze siècles d’histoire</li>
+                <li>Une carte des lieux à voir</li>
+                <li>Un quiz pour finir la visite</li>
+                <li>Le tracé des remparts de Vauban comme logo</li>
+                <li>La Sambre en fil conducteur</li>
+              </ul>
+            </li>
+            <li class="mindmap__branch mindmap__branch--bleu">
+              <h3 class="mindmap__title">Structure</h3>
+              <ul>
+                <li>Une page d’accueil et les 5 onglets demandés</li>
+                <li>Même en-tête et même pied de page partout</li>
+                <li>Un sommaire en haut de chaque longue page</li>
+                <li>Des liens vers l’onglet précédent et le suivant</li>
+              </ul>
+            </li>
+            <li class="mindmap__branch mindmap__branch--soleil">
+              <h3 class="mindmap__title">Design</h3>
+              <ul>
+                <li>Des couleurs relevées sur le logo de la ville</li>
+                <li>Le bleu pour l’institution, l’arc vert-jaune-orange en accent</li>
+                <li>Polices système pour limiter les téléchargements externes</li>
+                <li>Des contrastes suffisants pour tous</li>
+              </ul>
+            </li>
+          </ul>
+
+          <ul class="mindmap__col mindmap__col--right" aria-label="Familles d’idées, deuxième partie">
+            <li class="mindmap__branch mindmap__branch--vert">
+              <h3 class="mindmap__title">Objectifs</h3>
+              <ul>
+                <li>Donner envie de venir à Maubeuge</li>
+                <li>Des informations exactes et sourcées</li>
+                <li>Un site agréable sur téléphone</li>
+                <li>Des pages légères</li>
+              </ul>
+            </li>
+            <li class="mindmap__branch mindmap__branch--sambre">
+              <h3 class="mindmap__title">Public cible</h3>
+              <ul>
+                <li>Lycéens et étudiants du territoire</li>
+                <li>Familles et touristes, y compris belges</li>
+                <li>Nouveaux habitants</li>
+                <li>Le jury de la SAE</li>
+              </ul>
+            </li>
+            <li class="mindmap__branch mindmap__branch--ardoise">
+              <h3 class="mindmap__title">Contraintes</h3>
+              <ul>
+                <li>5 onglets obligatoires</li>
+                <li>Un site clair et accessible à tous</li>
+                <li>Groupe de 4 à 5 étudiants</li>
+                <li>Dépôt sur Moodle à la dernière séance</li>
+                <li>Oral de 5 à 10 minutes</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ÉQUIPE ============ -->
+    <section id="equipe" class="section section--alt" aria-labelledby="equipe-titre">
+      <div class="wrap">
+        <h2 id="equipe-titre">L’équipe et ses rôles</h2>
+        <p class="section__intro">
+          Chacun avait un domaine principal, mais les tâches collectives (brainstorming, relecture, oral)
+          ont été faites ensemble. La liste ci-dessous résume les huit tâches principales.
+        </p>
+        <ul class="equipe">
+          <li><strong>SAIDOUNI Youcef</strong><span>Chef de projet et mise en page</span></li>
+          <li><strong>BOUGUERRA Armand</strong><span>Recherche documentaire et rédaction</span></li>
+          <li><strong>FREMIN Gabin</strong><span>Design, charte graphique et carte des lieux</span></li>
+          <li><strong>ABIDI Yacine</strong><span>Charte numérique, tests et accessibilité</span></li>
+          <li><strong>ZAOUCHI Yanis</strong><span>Documentation, sources et mise en page</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ LISTE DES TÂCHES ============ -->
+    <section id="taches" class="section" aria-labelledby="taches-titre">
+      <div class="wrap">
+        <h2 id="taches-titre">Toutes les tâches, dans l’ordre</h2>
+        <p class="section__intro">
+          Les huit tâches principales sont classées par étape. Chaque ligne indique le responsable et l’état d’avancement.
+        </p>
+
+
+        <div class="table-wrap">
+          <table class="taches" id="taches-table">
+            <caption class="sr-only">Liste hiérarchisée des tâches du projet, avec responsables et état d’avancement</caption>
+            <thead>
+              <tr>
+                <th scope="col">N°</th>
+                <th scope="col">Tâche</th>
+                <th scope="col">Responsable</th>
+                <th scope="col">État</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><th colspan="4">Cadrage</th></tr>
+              <tr><td>1</td><td>Lire le sujet, définir les objectifs et choisir les organisations</td><td>Tous</td><td>Fait</td></tr>
+              <tr><th colspan="4">Recherche documentaire</th></tr>
+              <tr><td>2</td><td>Rechercher l’histoire, l’environnement et les organisations de Maubeuge</td><td>Armand, Yanis</td><td>Fait</td></tr>
+              <tr><th colspan="4">Conception</th></tr>
+              <tr><td>3</td><td>Définir l’arborescence, la palette et les maquettes</td><td>Youcef, Gabin</td><td>Fait</td></tr>
+              <tr><th colspan="4">Développement</th></tr>
+              <tr><td>4</td><td>Créer les pages du site et harmoniser leur présentation</td><td>Youcef, Gabin</td><td>Fait</td></tr>
+              <tr><td>5</td><td>Intégrer la carte Google Maps et les contenus de découverte</td><td>Gabin, Yanis</td><td>Fait</td></tr>
+              <tr><td>6</td><td>Rédiger la charte numérique et informatique</td><td>Yacine, Yanis</td><td>Fait</td></tr>
+              <tr><th colspan="4">Tests et livraison</th></tr>
+              <tr><td>7</td><td>Tester l’affichage, l’accessibilité et les liens</td><td>Tous</td><td>Fait</td></tr>
+              <tr><td>8</td><td>Préparer l’oral et déposer le site</td><td>Tous</td><td>Fait</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CHOIX ET DIFFICULTÉS ============ -->
+    <section id="choix" class="section section--alt" aria-labelledby="choix-titre">
+      <div class="wrap">
+        <h2 id="choix-titre">Nos choix et nos difficultés</h2>
+        <p class="section__intro">Quelques problèmes rencontrés en chemin, et la solution que nous avons retenue.</p>
+
+        <ul class="choix">
+          <li class="choix__item">
+            <h3>Pas de charte graphique officielle</h3>
+            <p><span class="choix__tag">Problème</span> La mairie ne publie pas de guide de ses couleurs, et son site n’utilise pas les couleurs de son logo.</p>
+            <p><span class="choix__tag choix__tag--ok">Solution</span> Nous avons relevé les couleurs au pixel sur le logo officiel, puis vérifié le contraste de chaque combinaison texte / fond.</p>
+          </li>
+          <li class="choix__item">
+            <h3>Des chiffres qui ne concordent pas</h3>
+            <p><span class="choix__tag">Problème</span> Selon les sources, le zoo compte 50, 60 ou 70 espèces.</p>
+            <p><span class="choix__tag choix__tag--ok">Solution</span> Nous retenons la source la plus récente ou la plus officielle, et nous citons toujours la source et l’année du chiffre.</p>
+          </li>
+          <li class="choix__item">
+            <h3>Une carte facile à consulter</h3>
+            <p><span class="choix__tag">Problème</span> Les visiteurs doivent pouvoir localiser rapidement les lieux présentés.</p>
+            <p><span class="choix__tag choix__tag--ok">Solution</span> Une carte Google Maps et des liens directs vers chaque lieu.</p>
+          </li>
+          <li class="choix__item">
+            <h3>Un site qui reste léger</h3>
+            <p><span class="choix__tag">Problème</span> Photos, vidéos et bibliothèques alourdissent vite les pages.</p>
+            <p><span class="choix__tag choix__tag--ok">Solution</span> Illustrations légères, images adaptées et aucun contenu vidéo en lecture automatique. Voir <a href="charte.html#maintenance-systemes">le point 9 de notre charte</a>.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ OUTILS ============ -->
+    <section id="outils" class="section" aria-labelledby="outils-titre">
+      <div class="wrap">
+        <h2 id="outils-titre">Les outils utilisés</h2>
+        <p class="section__intro">Leur usage dans le groupe est encadré par notre <a href="charte.html">charte numérique</a>.</p>
+
+        <!-- À ADAPTER : outils réellement utilisés par le groupe -->
+        <dl class="outils">
+          <div><dt>Ordinateur et navigateur</dt><dd>Consultation et vérification de l’affichage sur ordinateur et mobile.</dd></div>
+          <div><dt>Espace de stockage partagé</dt><dd>Recherches, textes à relire, maquettes.</dd></div>
+          <div><dt>Messagerie de groupe</dt><dd>Organisation des séances et suivi des tâches.</dd></div>
+          <div><dt>Google Maps</dt><dd>Repérage des lieux présentés dans la découverte de Maubeuge.</dd></div>
+          <div><dt>Sources documentaires</dt><dd>Vérification des informations historiques, culturelles et environnementales.</dd></div>
+          <div><dt>Moodle</dt><dd>Dépôt final du projet.</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <nav class="pager" aria-label="Onglets voisins">
+      <div class="wrap pager__inner">
+        <a class="pager__link pager__link--prev" href="organisations.html">
+          <span class="pager__dir"><span aria-hidden="true">←</span> Onglet précédent</span>
+          <span class="pager__title">1 · Organisations</span>
+        </a>
+        <a class="pager__link pager__link--next" href="empreinte.html">
+          <span class="pager__dir">Onglet suivant <span aria-hidden="true">→</span></span>
+          <span class="pager__title">3 · Empreinte écologique</span>
+        </a>
+      </div>
+    </nav>
+
+  </main>
+
+  <!-- ============ PIED DE PAGE (identique sur toutes les pages) ============ -->
+  <footer class="site-footer">
+    <svg class="site-footer__wave" viewBox="0 0 1440 40" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <path d="M0 40 V22 C120 2 240 2 360 22 C480 42 600 42 720 22 C840 2 960 2 1080 22 C1200 42 1320 42 1440 22 V40 Z"/>
+    </svg>
+    <div class="site-footer__body">
+      <div class="wrap">
+        <div class="site-footer__grid">
+          <div>
+            <p class="site-footer__brand">Découvrir Maubeuge</p>
+            <p>Projet étudiant réalisé dans le cadre de la SAE 1.06 du BUT Informatique, 2026.</p>
+            <p>Créé par SAIDOUNI Youcef, BOUGUERRA Armand, FREMIN Gabin, ABIDI Yacine et ZAOUCHI Yanis.</p>
+          </div>
+          <nav aria-label="Pied de page">
+            <h2>Le site</h2>
+            <ul>
+              <li><a href="organisations.html">Organisations</a></li>
+              <li><a href="demarche.html">Démarche</a></li>
+              <li><a href="empreinte.html">Empreinte écologique</a></li>
+              <li><a href="charte.html">Charte numérique et informatique</a></li>
+              <li><a href="decouverte.html">Découverte</a></li>
+            </ul>
+          </nav>
+          <div>
+            <h2>Crédits</h2>
+            <ul>
+              <li><a href="decouverte.html#sources">Sources documentaires</a></li>
+              <li><a href="charte.html">Notre charte d’utilisation</a></li>
+            </ul>
+          </div>
+        </div>
+        <p class="site-footer__legal">Site non officiel, sans lien avec la mairie de Maubeuge.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
