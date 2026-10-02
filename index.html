@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Découvrir Maubeuge — Accueil</title>
   <meta name="description" content="Site étudiant de découverte de Maubeuge : patrimoine, histoire, organisations locales, empreinte écologique et charte numérique.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/accueil.css">
 </head>
@@ -18,17 +15,7 @@
   <header class="site-header">
     <div class="wrap site-header__inner">
       <a class="brand" href="index.html">
-        <svg class="brand__mark" viewBox="30 26 340 340" aria-hidden="true" focusable="false">
-          <defs>
-            <linearGradient id="brand-arc" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#72AD2E"/>
-              <stop offset="0.55" stop-color="#F9B619"/>
-              <stop offset="1" stop-color="#F0831F"/>
-            </linearGradient>
-          </defs>
-          <path fill="url(#brand-arc)" d="M171.8 94.8 L171.8 72.7 L200.0 35.0 L228.2 72.7 L228.2 94.8 L264.7 112.4 L281.9 98.6 L329.0 97.1 L317.1 142.7 L299.8 156.5 L308.8 195.9 L330.3 200.8 L360.9 236.7 L317.8 255.8 L296.3 250.9 L271.0 282.5 L280.6 302.4 L271.6 348.7 L229.8 326.9 L220.2 307.0 L179.8 307.0 L170.2 326.9 L128.4 348.7 L119.4 302.4 L129.0 282.5 L103.7 250.9 L82.2 255.8 L39.1 236.7 L69.7 200.8 L91.2 195.9 L100.2 156.5 L82.9 142.7 L71.0 97.1 L118.1 98.6 L135.3 112.4 Z"/>
-          <path d="M40 262 C 95 238, 140 290, 200 270 S 305 240, 362 262" fill="none" stroke="#004366" stroke-width="26" stroke-linecap="round"/>
-        </svg>
+        <img class="brand__mark" src="img/logo.svg" alt="">
         <span>Découvrir Maubeuge</span>
       </a>
 
@@ -124,90 +111,30 @@
       </div>
     </section>
 
-    <!-- ============ SOMMAIRE DES 5 ONGLETS ============ -->
-    <section class="section" aria-labelledby="sommaire-titre">
+    <!-- ============ LIEUX À EXPLORER ============ -->
+    <section class="section" aria-labelledby="lieux-titre">
       <div class="wrap">
-        <h2 id="sommaire-titre">Le site en cinq onglets</h2>
-        <p class="section__intro">
-          Chaque onglet correspond à une partie du projet. Suivez l’ordre, ou commencez
-          directement par la découverte de la ville.
-        </p>
-
-        <ol class="sommaire">
-          <li>
-            <a class="sommaire__item" href="organisations.html">
-              <span class="sommaire__num" aria-hidden="true">1</span>
-              <span>
-                <span class="sommaire__title">Organisations</span>
-                <span class="sommaire__desc">Deux structures de Maubeuge&nbsp;: leurs missions, leurs activités et leur impact sur le territoire.</span>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="sommaire__item" href="demarche.html">
-              <span class="sommaire__num" aria-hidden="true">2</span>
-              <span>
-                <span class="sommaire__title">Démarche</span>
-                <span class="sommaire__desc">Notre brainstorming, la liste des tâches, qui a fait quoi et dans quel ordre.</span>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="sommaire__item" href="empreinte.html">
-              <span class="sommaire__num" aria-hidden="true">3</span>
-              <span>
-                <span class="sommaire__title">Empreinte écologique</span>
-                <span class="sommaire__desc">Les actions des deux organisations pour réduire leur impact, comparées dans un tableau, et d’autres pistes en carte mentale.</span>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="sommaire__item" href="charte.html">
-              <span class="sommaire__num" aria-hidden="true">4</span>
-              <span>
-                <span class="sommaire__title">Charte numérique</span>
-                <span class="sommaire__desc">Les règles que notre groupe s’est fixées&nbsp;: sécurité, droit d’auteur, données personnelles, sobriété numérique.</span>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a class="sommaire__item" href="decouverte.html">
-              <span class="sommaire__num" aria-hidden="true">5</span>
-              <span>
-                <span class="sommaire__title">Découvrir Maubeuge</span>
-                <span class="sommaire__desc">Histoire, patrimoine, culture et gastronomie, avec une carte, une frise et un quiz.</span>
-              </span>
-              <span class="sommaire__badge">Interactif</span>
-            </a>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- ============ TROIS LIEUX ============ -->
-    <section class="section section--alt" aria-labelledby="lieux-titre">
-      <div class="wrap">
-        <h2 id="lieux-titre">Trois lieux pour commencer</h2>
-        <p class="section__intro">Chacun s’ouvre directement sur la carte interactive.</p>
+        <h2 id="lieux-titre">Quelques lieux à explorer</h2>
+        <p class="section__intro">Ouvrez la fiche de chaque lieu dans Google Maps.</p>
 
         <ul class="teasers">
           <li class="teaser">
             <span class="tag tag--patrimoine">Patrimoine</span>
             <h3>Les remparts de Vauban</h3>
             <p>Plus de 43 hectares de fortifications en plein centre-ville, à parcourir librement depuis la Porte de Mons.</p>
-            <a href="decouverte.html#carte">Voir <span class="sr-only">les remparts </span>sur la carte</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Porte%20de%20Mons%20Maubeuge">Ouvrir dans Google Maps <span class="sr-only">: les remparts de Vauban</span></a>
           </li>
           <li class="teaser">
             <span class="tag tag--patrimoine">Patrimoine</span>
             <h3>La ville de Lurçat</h3>
             <p>Rasé en 1940, le centre a été redessiné par André Lurçat. Son église en béton armé est un monument historique.</p>
-            <a href="decouverte.html#carte">Voir <span class="sr-only">l’église Saint-Pierre-Saint-Paul </span>sur la carte</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Eglise%20Saint-Pierre-Saint-Paul%20Maubeuge">Ouvrir dans Google Maps <span class="sr-only">: l’église Saint-Pierre-Saint-Paul</span></a>
           </li>
           <li class="teaser">
             <span class="tag tag--nature">Nature et loisirs</span>
             <h3>Un zoo dans les remparts</h3>
             <p>Environ 300 animaux des cinq continents, installés au pied des fortifications depuis 1955.</p>
-            <a href="decouverte.html#carte">Voir <span class="sr-only">le zoo </span>sur la carte</a>
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Zoo%20de%20Maubeuge">Ouvrir dans Google Maps <span class="sr-only">: le zoo</span></a>
           </li>
         </ul>
       </div>

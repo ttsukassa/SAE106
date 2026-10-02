@@ -83,28 +83,15 @@
   margin-top: 0;
 }
 
-.charte-points ol {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.6rem 2rem;
-  margin: 0;
-  padding-left: 1.5rem;
-}
-
-.charte-points a {
-  color: var(--color-link);
-  font-weight: 600;
-}
-
 .informatique-cards {
   display: grid;
-  gap: 1.5rem;
+  gap: 0.75rem;
 }
 
 .informatique-card {
-  padding: clamp(1.25rem, 3.5vw, 2.25rem);
+  padding: 0 clamp(1rem, 3vw, 1.5rem);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-l);
+  border-radius: var(--radius-m);
   background: #fff;
   scroll-margin-top: 1.5rem;
 }
@@ -113,6 +100,29 @@
   display: flex;
   align-items: center;
   gap: 0.9rem;
+  min-height: 4.5rem;
+  padding-block: 0.75rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.informatique-card__head::-webkit-details-marker {
+  display: none;
+}
+
+.informatique-card__head::after {
+  content: "";
+  flex: none;
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-left: auto;
+  border-right: 2px solid var(--color-primary);
+  border-bottom: 2px solid var(--color-primary);
+  transform: rotate(45deg);
+}
+
+.informatique-card[open] .informatique-card__head::after {
+  transform: rotate(225deg);
 }
 
 .informatique-card__num {
@@ -131,17 +141,18 @@
   font-weight: 700;
 }
 
-.informatique-card h3 {
-  margin: 0;
+.informatique-card__title {
   color: var(--color-heading);
   font-size: clamp(1.35rem, 2.6vw, 1.7rem);
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 .informatique-card__body {
   display: grid;
   gap: 1rem;
-  margin-top: 1rem;
-  margin-left: 3.9rem;
+  padding: 0 0 1.5rem 3.9rem;
 }
 
 .informatique-card__body > p:not(.concret) {
@@ -151,7 +162,7 @@
 
 @media (max-width: 36rem) {
   .informatique-card__body {
-    margin-left: 0;
+    padding-left: 0;
   }
 }
 

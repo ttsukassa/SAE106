@@ -63,8 +63,8 @@
   --gradient-arc: linear-gradient(90deg, #72AD2E, #F9B619 55%, #F0831F);
 
   /* --- Typographie --- */
-  --font-display: "Outfit", "Avenir Next", "Segoe UI", system-ui, sans-serif;
-  --font-text: "Source Sans 3", "Source Sans Pro", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --font-text: "Segoe UI", system-ui, sans-serif;
 
   /* --- Mise en page --- */
   --container: 72rem;
@@ -332,41 +332,35 @@ a:hover {
   background: var(--color-highlight);
 }
 
-.nav-toggle {
-  display: none;
-}
-
 @media (max-width: 68rem) {
   .site-nav {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    display: block;
-    background: #fff;
-    border-bottom: 1px solid var(--color-border);
-    box-shadow: 0 12px 24px -12px rgba(0, 26, 42, 0.25);
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: thin;
   }
 
   .site-nav ul {
-    flex-direction: column;
-    gap: 0;
-    padding: 0.5rem var(--gutter) 1rem;
+    flex-wrap: nowrap;
+    gap: 0.25rem;
+    padding-bottom: 0.5rem;
   }
 
   .site-nav a {
-    display: block;
-    padding-block: 0.8rem;
-    border-bottom: 1px solid var(--bleu-50);
+    display: inline-block;
+    padding: 0.6rem 0.75rem;
+    white-space: nowrap;
   }
 
   .site-nav a::after {
-    right: auto;
-    width: 2.5rem;
+    left: 0.75rem;
+    right: 0.75rem;
   }
 
   .site-header__inner {
-    position: relative;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.35rem;
+    padding-top: 0.55rem;
   }
 }
 

@@ -1,178 +1,88 @@
 /* Page Empreinte écologique */
 
-.empreinte {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
+.empreinte .bilan {
+  max-width: 75ch;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--color-primary);
+  background: var(--color-bg-alt);
 }
 
-.empreinte h1 {
-  color: #004366;
-  border-bottom: 3px solid #72AD2E;
-  padding-bottom: 10px;
-}
-
-.empreinte h2 {
-  color: #004366;
-  margin-top: 40px;
-}
-
-.empreinte h3 {
-  color: #313D4D;
-  margin-top: 20px;
-}
-
-.intro {
-  font-size: 18px;
-}
-
-.sommaire {
-  background-color: #F2F6F7;
-  padding: 10px;
-  border: 1px solid #D6DEE7;
-}
-
-/* Bilan et légende */
-.bilan {
-  background-color: #F2F6F7;
-  border-left: 5px solid #004366;
-  padding: 10px;
+.empreinte .legende {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .legende span {
-  padding: 3px 8px;
-  margin-left: 5px;
-  border: 1px solid #999;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-s);
 }
 
-/* Couleurs des cases (même couleurs pour la légende) */
 .oui {
-  background-color: #D6E7C2;
+  background: var(--vert-100);
 }
 
 .partiel {
-  background-color: #FDE4A8;
+  background: var(--soleil-100);
 }
 
 .non {
-  background-color: #EEEEEE;
-}
-
-/* Tableau */
-.tableau-scroll {
-  overflow-x: auto;
+  background: var(--ardoise-50);
 }
 
 .comparatif {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
+  min-width: 48rem;
 }
 
-.comparatif th,
-.comparatif td {
-  border: 1px solid #999;
-  padding: 10px;
-  text-align: left;
-  vertical-align: top;
-}
-
-.comparatif tr:first-child th {
-  background-color: #004366;
-  color: white;
-}
-
-.comparatif th {
-  background-color: #F2F6F7;
-  width: 160px;
+.comparatif tbody th {
+  width: 12rem;
+  background: var(--color-bg-alt);
 }
 
 .comparatif i {
-  font-size: 14px;
-  color: #5C6B7F;
+  font-size: 0.9rem;
+  color: var(--color-muted);
 }
 
-/* Encadré attention */
 .attention {
-  background-color: #FFF4D6;
-  border: 2px solid #F9B619;
-  padding: 10px 15px;
-  margin-top: 20px;
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-left: 4px solid var(--soleil-300);
+  border-radius: var(--radius-s);
+  background: var(--soleil-50);
 }
 
 .attention h3 {
   margin-top: 0;
 }
 
-/* Carte mentale */
-.centre {
-  width: 100%;
-  text-align: center;
-}
-
-.fleches {
-  margin: 0;
-  font-size: 22px;
-  font-weight: bold;
-  color: #72AD2E;
-  word-spacing: 100px;
-}
-
-.centre-carte {
-  width: 300px;
-  margin: 5px auto;
-  padding: 15px;
-  text-align: center;
-  font-weight: bold;
-  color: white;
-  background-color: #72AD2E;
-  border-radius: 10px;
-}
-
 .carte {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 1rem;
 }
 
 .branche {
-  width: 30%;
-  flex-grow: 1;
-  border: 2px solid #72AD2E;
-  border-radius: 10px;
-  padding: 10px;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--vert-400);
+  border-radius: var(--radius-m);
+  background: #fff;
 }
 
 .branche h3 {
   margin-top: 0;
-  color: #43671B;
+  color: var(--color-primary);
 }
 
-/* Liens vers les autres pages */
-.navigation {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 40px;
-  padding-top: 15px;
-  border-top: 1px solid #D6DEE7;
+.branche ul {
+  margin-bottom: 0;
+  padding-left: 1.25rem;
 }
 
-/* Téléphone */
-@media (max-width: 700px) {
-  .branche {
-    width: 100%;
-  }
-
-  .centre-carte {
-    width: auto;
-  }
-
-  .fleches {
-    display: none;
-  }
-
-  .navigation {
-    flex-direction: column;
-    gap: 10px;
-  }
+.branche li + li {
+  margin-top: 0.4rem;
 }

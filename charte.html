@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Découvrir Maubeuge — Charte numérique et informatique du projet</title>
   <meta name="description" content="Charte numérique et informatique de notre groupe pour le projet SAE Découvrir Maubeuge : règles responsables, sécurité, fichiers, données, outils et écoresponsabilité.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/charte.css">
 </head>
@@ -18,21 +15,9 @@
   <header class="site-header">
     <div class="wrap site-header__inner">
       <a class="brand" href="index.html">
-        <svg class="brand__mark" viewBox="30 26 340 340" aria-hidden="true" focusable="false">
-          <defs>
-            <linearGradient id="brand-arc" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#72AD2E"/>
-              <stop offset="0.55" stop-color="#F9B619"/>
-              <stop offset="1" stop-color="#F0831F"/>
-            </linearGradient>
-          </defs>
-          <path fill="url(#brand-arc)" d="M171.8 94.8 L171.8 72.7 L200.0 35.0 L228.2 72.7 L228.2 94.8 L264.7 112.4 L281.9 98.6 L329.0 97.1 L317.1 142.7 L299.8 156.5 L308.8 195.9 L330.3 200.8 L360.9 236.7 L317.8 255.8 L296.3 250.9 L271.0 282.5 L280.6 302.4 L271.6 348.7 L229.8 326.9 L220.2 307.0 L179.8 307.0 L170.2 326.9 L128.4 348.7 L119.4 302.4 L129.0 282.5 L103.7 250.9 L82.2 255.8 L39.1 236.7 L69.7 200.8 L91.2 195.9 L100.2 156.5 L82.9 142.7 L71.0 97.1 L118.1 98.6 L135.3 112.4 Z"/>
-          <path d="M40 262 C 95 238, 140 290, 200 270 S 305 240, 362 262" fill="none" stroke="#004366" stroke-width="26" stroke-linecap="round"/>
-        </svg>
+        <img class="brand__mark" src="img/logo.svg" alt="">
         <span>Découvrir Maubeuge</span>
       </a>
-
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
 
       <nav id="site-nav" class="site-nav" aria-label="Navigation principale">
         <ul>
@@ -92,23 +77,12 @@
 
         <div class="charte-points" aria-labelledby="points-titre">
           <h2 id="points-titre">Les 10 points de la charte informatique</h2>
-          <ol>
-            <li><a href="charte.html#materiel-personnel">L’utilisation du matériel personnel</a></li>
-            <li><a href="charte.html#surveillance-salaries">Les moyens de surveillance des salariés</a></li>
-            <li><a href="charte.html#messagerie-electronique">L’utilisation de la messagerie électronique</a></li>
-            <li><a href="charte.html#internet-personnel">L’accès internet pour raisons personnelles</a></li>
-            <li><a href="charte.html#sanctions">Les sanctions</a></li>
-            <li><a href="charte.html#mots-de-passe">Règles pour créer et gérer les mots de passe</a></li>
-            <li><a href="charte.html#vpn-teletravail">L’utilisation du VPN en cas de télétravail</a></li>
-            <li><a href="charte.html#gestion-crise">Une politique de gestion de crise</a></li>
-            <li><a href="charte.html#maintenance-systemes">La maintenance des systèmes informatiques</a></li>
-            <li><a href="charte.html#signature-salarie">La signature du salarié</a></li>
-          </ol>
+          <p>Ouvrez un point pour lire la règle et son application à notre projet.</p>
         </div>
 
         <div class="informatique-cards" aria-label="Les dix points développés">
-          <article class="informatique-card" id="materiel-personnel">
-            <div class="informatique-card__head"><span class="informatique-card__num">1</span><h3>L’utilisation du matériel personnel</h3></div>
+          <details class="informatique-card" id="materiel-personnel">
+            <summary class="informatique-card__head"><span class="informatique-card__num">1</span><span class="informatique-card__title">L’utilisation du matériel personnel</span></summary>
             <div class="informatique-card__body">
               <p>Chaque membre peut travailler sur son propre ordinateur ou sur ceux mis à disposition par l’IUT. Dans les deux cas, le matériel utilisé pour le projet doit rester sécurisé et à jour.</p>
               <ul class="liste">
@@ -119,9 +93,9 @@
               </ul>
               <p class="concret"><strong>Dans notre projet.</strong> Les fichiers de travail sont enregistrés dans l’espace partagé plutôt que sur un seul appareil, afin qu’une panne ou une perte de matériel ne fasse jamais perdre le travail du groupe.</p>
             </div>
-          </article>
-          <article class="informatique-card" id="surveillance-salaries">
-            <div class="informatique-card__head"><span class="informatique-card__num">2</span><h3>Les moyens de surveillance des salariés</h3></div>
+          </details>
+          <details class="informatique-card" id="surveillance-salaries">
+            <summary class="informatique-card__head"><span class="informatique-card__num">2</span><span class="informatique-card__title">Les moyens de surveillance des salariés</span></summary>
             <div class="informatique-card__body">
               <p>Adapté à notre contexte étudiant&nbsp;: nous n’avons pas d’employeur, mais certains outils du projet gardent une trace de l’activité de chacun (historique de fichiers, suivi des tâches). Cette charte encadre leur usage.</p>
               <ul class="liste">
@@ -132,9 +106,9 @@
               </ul>
               <p class="concret"><strong>Dans notre projet.</strong> Le suivi des tâches sert de tableau de bord commun, pas d’outil de contrôle&nbsp;: il aide à voir ce qu’il reste à faire, pas à évaluer les personnes.</p>
             </div>
-          </article>
-          <article class="informatique-card" id="messagerie-electronique">
-            <div class="informatique-card__head"><span class="informatique-card__num">3</span><h3>L’utilisation de la messagerie électronique</h3></div>
+          </details>
+          <details class="informatique-card" id="messagerie-electronique">
+            <summary class="informatique-card__head"><span class="informatique-card__num">3</span><span class="informatique-card__title">L’utilisation de la messagerie électronique</span></summary>
             <div class="informatique-card__body">
               <p>La messagerie de groupe et les e-mails sont nos principaux outils d’échange&nbsp;: leur usage doit rester clair, respectueux et fiable pour tout le monde.</p>
               <ul class="liste">
@@ -145,9 +119,9 @@
               </ul>
               <p class="concret"><strong>Dans notre projet.</strong> Un message court avec un objet clair reçoit une réponse sous 24&nbsp;heures les jours de cours&nbsp;; au-delà, on relance directement en séance.</p>
             </div>
-          </article>
-          <article class="informatique-card" id="internet-personnel">
-            <div class="informatique-card__head"><span class="informatique-card__num">4</span><h3>L’accès internet pour raisons personnelles</h3></div>
+          </details>
+          <details class="informatique-card" id="internet-personnel">
+            <summary class="informatique-card__head"><span class="informatique-card__num">4</span><span class="informatique-card__title">L’accès internet pour raisons personnelles</span></summary>
             <div class="informatique-card__body">
               <p>Le réseau et le matériel de l’IUT sont mis à disposition pour le projet&nbsp;: un usage personnel ponctuel est toléré, dans certaines limites.</p>
               <ul class="liste">
@@ -158,9 +132,9 @@
               </ul>
               <p class="concret"><strong>Dans notre projet.</strong> Chaque information trouvée en ligne est recoupée avec au moins une source fiable avant d’être intégrée au site.</p>
             </div>
-          </article>
-          <article class="informatique-card" id="sanctions">
-            <div class="informatique-card__head"><span class="informatique-card__num">5</span><h3>Les sanctions</h3></div>
+          </details>
+          <details class="informatique-card" id="sanctions">
+            <summary class="informatique-card__head"><span class="informatique-card__num">5</span><span class="informatique-card__title">Les sanctions</span></summary>
             <div class="informatique-card__body">
               <p>Cette charte n’a de sens que si elle est appliquée&nbsp;: en cas de non-respect, nous privilégions toujours le dialogue avant toute mesure plus stricte.</p>
               <ul class="liste">
@@ -171,9 +145,9 @@
               </ul>
               <p class="concret"><strong>Dans notre projet.</strong> Une erreur de bonne foi (mauvaise manipulation, oubli) se corrige et s’explique&nbsp;; elle n’entraîne pas de sanction en soi.</p>
             </div>
-          </article>
-          <article class="informatique-card" id="mots-de-passe">
-            <div class="informatique-card__head"><span class="informatique-card__num">6</span><h3>Règles pour créer et gérer les mots de passe</h3></div>
+          </details>
+          <details class="informatique-card" id="mots-de-passe">
+            <summary class="informatique-card__head"><span class="informatique-card__num">6</span><span class="informatique-card__title">Règles pour créer et gérer les mots de passe</span></summary>
             <div class="informatique-card__body">
               <p>Les mots de passe protègent aussi bien nos comptes personnels que les outils partagés du projet&nbsp;: leur gestion suit des règles simples mais non négociables.</p>
               <ul class="liste">
@@ -184,9 +158,9 @@
               </ul>
               <p class="concret"><strong>Dans notre projet.</strong> Les accès à l’espace partagé et aux comptes du site ne sont jamais communiqués en dehors du groupe, pas même temporairement.</p>
             </div>
-          </article>
-          <article class="informatique-card" id="vpn-teletravail">
-            <div class="informatique-card__head"><span class="informatique-card__num">7</span><h3>L’utilisation du VPN en cas de télétravail</h3></div>
+          </details>
+          <details class="informatique-card" id="vpn-teletravail">
+            <summary class="informatique-card__head"><span class="informatique-card__num">7</span><span class="informatique-card__title">L’utilisation du VPN en cas de télétravail</span></summary>
             <div class="informatique-card__body">
               <p>Une partie du travail se fait à distance&nbsp;: les mêmes exigences de sécurité et de confidentialité s’appliquent, où que l’on se connecte.</p>
               <ul class="liste">
@@ -197,9 +171,9 @@
               </ul>
               <p class="concret"><strong>Dans notre projet.</strong> Le site et ses fichiers ne vivent qu’à un seul endroit&nbsp;: l’espace partagé validé par le groupe, jamais sur un cloud personnel isolé.</p>
             </div>
-          </article>
-          <article class="informatique-card" id="gestion-crise">
-            <div class="informatique-card__head"><span class="informatique-card__num">8</span><h3>Une politique de gestion de crise</h3></div>
+          </details>
+          <details class="informatique-card" id="gestion-crise">
+            <summary class="informatique-card__head"><span class="informatique-card__num">8</span><span class="informatique-card__title">Une politique de gestion de crise</span></summary>
             <div class="informatique-card__body">
               <p>Perte d’appareil, suppression accidentelle, piratage ou fuite de données&nbsp;: nous avons prévu une marche à suivre pour réagir vite et limiter les dégâts.</p>
               <ul class="liste">
@@ -210,9 +184,9 @@
               </ul>
               <p class="concret"><strong>Dans notre projet.</strong> En cas de compte compromis, le mot de passe est changé sans délai et les autres membres sont prévenus pour vérifier qu’aucun accès n’a été détourné.</p>
             </div>
-          </article>
-          <article class="informatique-card" id="maintenance-systemes">
-            <div class="informatique-card__head"><span class="informatique-card__num">9</span><h3>La maintenance des systèmes informatiques</h3></div>
+          </details>
+          <details class="informatique-card" id="maintenance-systemes">
+            <summary class="informatique-card__head"><span class="informatique-card__num">9</span><span class="informatique-card__title">La maintenance des systèmes informatiques</span></summary>
             <div class="informatique-card__body">
               <p>Un site qui évolue doit rester fiable&nbsp;: nous entretenons régulièrement le projet plutôt que d’attendre qu’un problème apparaisse.</p>
               <ul class="liste">
@@ -223,9 +197,9 @@
               </ul>
               <p class="concret"><strong>Dans notre projet.</strong> Des pages et des images compressées limitent le poids du site et donc son impact énergétique, en plus d’en faciliter la maintenance.</p>
             </div>
-          </article>
-          <article class="informatique-card" id="signature-salarie">
-            <div class="informatique-card__head"><span class="informatique-card__num">10</span><h3>La signature du salarié</h3></div>
+          </details>
+          <details class="informatique-card" id="signature-salarie">
+            <summary class="informatique-card__head"><span class="informatique-card__num">10</span><span class="informatique-card__title">La signature du salarié</span></summary>
             <div class="informatique-card__body">
               <p>Adaptée à notre groupe d’étudiants&nbsp;: cette signature marque l’engagement personnel de chaque membre à respecter l’ensemble de la charte, du premier jour du projet jusqu’au rendu final.</p>
               <ul class="liste">
@@ -236,7 +210,7 @@
               </ul>
               <p class="concret"><strong>Dans notre projet.</strong> Les signatures de chaque membre figurent plus bas sur cette page, dans la partie « Faire vivre la charte ».</p>
             </div>
-          </article>
+          </details>
         </div>
       </div>
     </section>

@@ -3,11 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Découvrir Maubeuge — Histoire, patrimoine et carte interactive</title>
-  <meta name="description" content="Présentation interactive de Maubeuge : situation, frise historique, carte des lieux à voir, culture, gastronomie et quiz.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+  <title>Découvrir Maubeuge — Histoire, patrimoine et lieux à voir</title>
+  <meta name="description" content="Présentation de Maubeuge : situation, histoire, patrimoine, culture, gastronomie et lieux à voir.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/decouverte.css">
 </head>
@@ -18,21 +15,9 @@
   <header class="site-header">
     <div class="wrap site-header__inner">
       <a class="brand" href="index.html">
-        <svg class="brand__mark" viewBox="30 26 340 340" aria-hidden="true" focusable="false">
-          <defs>
-            <linearGradient id="brand-arc" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#72AD2E"/>
-              <stop offset="0.55" stop-color="#F9B619"/>
-              <stop offset="1" stop-color="#F0831F"/>
-            </linearGradient>
-          </defs>
-          <path fill="url(#brand-arc)" d="M171.8 94.8 L171.8 72.7 L200.0 35.0 L228.2 72.7 L228.2 94.8 L264.7 112.4 L281.9 98.6 L329.0 97.1 L317.1 142.7 L299.8 156.5 L308.8 195.9 L330.3 200.8 L360.9 236.7 L317.8 255.8 L296.3 250.9 L271.0 282.5 L280.6 302.4 L271.6 348.7 L229.8 326.9 L220.2 307.0 L179.8 307.0 L170.2 326.9 L128.4 348.7 L119.4 302.4 L129.0 282.5 L103.7 250.9 L82.2 255.8 L39.1 236.7 L69.7 200.8 L91.2 195.9 L100.2 156.5 L82.9 142.7 L71.0 97.1 L118.1 98.6 L135.3 112.4 Z"/>
-          <path d="M40 262 C 95 238, 140 290, 200 270 S 305 240, 362 262" fill="none" stroke="#004366" stroke-width="26" stroke-linecap="round"/>
-        </svg>
+        <img class="brand__mark" src="img/logo.svg" alt="">
         <span>Découvrir Maubeuge</span>
       </a>
-
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
 
       <nav id="site-nav" class="site-nav" aria-label="Navigation principale">
         <ul>
@@ -132,21 +117,21 @@
       <div class="wrap">
         <h2 id="carte-titre">Les lieux à voir</h2>
         <p class="section__intro">
-          Choisissez un lieu dans la liste ou sur la carte pour afficher sa fiche. Les filtres
-          n’affichent qu’une catégorie à la fois.
+          La carte montre le centre de Maubeuge. Pour localiser un lieu précis, ouvrez-le dans
+          Google Maps depuis la liste.
         </p>
 
         <div class="explorer">
           <div class="explorer__map">
-            <div id="map" class="map" role="region" aria-label="Carte Google Maps des lieux à voir autour de Maubeuge">
-              <iframe title="Carte Google Maps des lieux à voir autour de Maubeuge" src="https://www.google.com/maps?q=50.2802,3.9738&z=14&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-            </div>
+            <details class="map-disclosure">
+              <summary>Afficher la carte générale (Google Maps)</summary>
+              <div id="map" class="map" role="region" aria-label="Carte générale de Maubeuge">
+                <iframe title="Carte générale de Maubeuge sur Google Maps" src="https://www.google.com/maps?q=50.2802,3.9738&z=14&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+              </div>
+            </details>
           </div>
 
           <div class="explorer__side">
-            <div class="filters" role="group" aria-label="Catégories de lieux">
-              <span class="filter" aria-hidden="true">Patrimoine</span><span class="filter" aria-hidden="true">Nature et loisirs</span><span class="filter" aria-hidden="true">Culture</span>
-            </div>
             <ul class="places" aria-label="Liste des lieux">
               <li><a class="place" href="https://www.google.com/maps/search/?api=1&amp;query=Porte%20de%20Mons%20Maubeuge" target="_blank" rel="noopener noreferrer"><span class="place__name">Porte de Mons et remparts</span><span class="tag tag--patrimoine">Patrimoine</span></a></li>
               <li><a class="place" href="https://www.google.com/maps/search/?api=1&amp;query=Zoo%20de%20Maubeuge" target="_blank" rel="noopener noreferrer"><span class="place__name">Zoo de Maubeuge</span><span class="tag tag--nature">Nature et loisirs</span></a></li>
@@ -278,7 +263,7 @@
     <section id="quiz" class="section section--alt" aria-labelledby="quiz-titre">
       <div class="wrap">
         <h2 id="quiz-titre">Testez vos connaissances</h2>
-        <p class="section__intro">Sept questions sur ce que vous venez de découvrir. Les réponses sont toutes sur cette page.</p>
+        <p class="section__intro">Quatre questions sur ce que vous venez de découvrir. Les réponses sont toutes sur cette page.</p>
 
         <div class="quiz">
           <details><summary>Quelle rivière traverse Maubeuge&nbsp;?</summary><p><strong>La Sambre.</strong></p></details>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="30 26 340 340">
+  <defs>
+    <linearGradient id="brand-arc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#72AD2E"/>
+      <stop offset="0.55" stop-color="#F9B619"/>
+      <stop offset="1" stop-color="#F0831F"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#brand-arc)" d="M171.8 94.8 L171.8 72.7 L200 35 L228.2 72.7 L228.2 94.8 L264.7 112.4 L281.9 98.6 L329 97.1 L317.1 142.7 L299.8 156.5 L308.8 195.9 L330.3 200.8 L360.9 236.7 L317.8 255.8 L296.3 250.9 L271 282.5 L280.6 302.4 L271.6 348.7 L229.8 326.9 L220.2 307 L179.8 307 L170.2 326.9 L128.4 348.7 L119.4 302.4 L129 282.5 L103.7 250.9 L82.2 255.8 L39.1 236.7 L69.7 200.8 L91.2 195.9 L100.2 156.5 L82.9 142.7 L71 97.1 L118.1 98.6 L135.3 112.4 Z"/>
+  <path d="M40 262 C95 238 140 290 200 270 S305 240 362 262" fill="none" stroke="#004366" stroke-width="26" stroke-linecap="round"/>
+</svg>

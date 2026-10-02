@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Découvrir Maubeuge — Notre démarche</title>
   <meta name="description" content="Méthode de travail du projet : brainstorming initial, répartition des rôles, liste hiérarchisée des tâches avec responsables et état d’avancement.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/demarche.css">
 </head>
@@ -18,21 +15,9 @@
   <header class="site-header">
     <div class="wrap site-header__inner">
       <a class="brand" href="index.html">
-        <svg class="brand__mark" viewBox="30 26 340 340" aria-hidden="true" focusable="false">
-          <defs>
-            <linearGradient id="brand-arc" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#72AD2E"/>
-              <stop offset="0.55" stop-color="#F9B619"/>
-              <stop offset="1" stop-color="#F0831F"/>
-            </linearGradient>
-          </defs>
-          <path fill="url(#brand-arc)" d="M171.8 94.8 L171.8 72.7 L200.0 35.0 L228.2 72.7 L228.2 94.8 L264.7 112.4 L281.9 98.6 L329.0 97.1 L317.1 142.7 L299.8 156.5 L308.8 195.9 L330.3 200.8 L360.9 236.7 L317.8 255.8 L296.3 250.9 L271.0 282.5 L280.6 302.4 L271.6 348.7 L229.8 326.9 L220.2 307.0 L179.8 307.0 L170.2 326.9 L128.4 348.7 L119.4 302.4 L129.0 282.5 L103.7 250.9 L82.2 255.8 L39.1 236.7 L69.7 200.8 L91.2 195.9 L100.2 156.5 L82.9 142.7 L71.0 97.1 L118.1 98.6 L135.3 112.4 Z"/>
-          <path d="M40 262 C 95 238, 140 290, 200 270 S 305 240, 362 262" fill="none" stroke="#004366" stroke-width="26" stroke-linecap="round"/>
-        </svg>
+        <img class="brand__mark" src="img/logo.svg" alt="">
         <span>Découvrir Maubeuge</span>
       </a>
-
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
 
       <nav id="site-nav" class="site-nav" aria-label="Navigation principale">
         <ul>
@@ -108,7 +93,7 @@
               <ul>
                 <li>Des couleurs relevées sur le logo de la ville</li>
                 <li>Le bleu pour l’institution, l’arc vert-jaune-orange en accent</li>
-                <li>Polices Outfit (titres) et Source Sans 3 (texte)</li>
+                <li>Polices système pour limiter les téléchargements externes</li>
                 <li>Des contrastes suffisants pour tous</li>
               </ul>
             </li>
@@ -154,12 +139,12 @@
         <h2 id="equipe-titre">L’équipe et ses rôles</h2>
         <p class="section__intro">
           Chacun avait un domaine principal, mais les tâches collectives (brainstorming, relecture, oral)
-          ont été faites ensemble. Le nombre de tâches est calculé à partir de la liste ci-dessous.
+          ont été faites ensemble. La liste ci-dessous résume les huit tâches principales.
         </p>
         <ul class="equipe">
           <li><strong>SAIDOUNI Youcef</strong><span>Chef de projet et mise en page</span></li>
           <li><strong>BOUGUERRA Armand</strong><span>Recherche documentaire et rédaction</span></li>
-          <li><strong>FREMIN Gabin</strong><span>Design, charte graphique et carte interactive</span></li>
+          <li><strong>FREMIN Gabin</strong><span>Design, charte graphique et carte des lieux</span></li>
           <li><strong>ABIDI Yacine</strong><span>Charte numérique, tests et accessibilité</span></li>
           <li><strong>ZAOUCHI Yanis</strong><span>Documentation, sources et mise en page</span></li>
         </ul>
@@ -171,8 +156,7 @@
       <div class="wrap">
         <h2 id="taches-titre">Toutes les tâches, dans l’ordre</h2>
         <p class="section__intro">
-          Six grandes étapes, chacune découpée en tâches numérotées dans l’ordre de réalisation.
-          Filtrez par état ou par membre pour voir qui a fait quoi.
+          Les huit tâches principales sont classées par étape. Chaque ligne indique le responsable et l’état d’avancement.
         </p>
 
 
@@ -196,7 +180,7 @@
               <tr><td>3</td><td>Définir l’arborescence, la palette et les maquettes</td><td>Youcef, Gabin</td><td>Fait</td></tr>
               <tr><th colspan="4">Développement</th></tr>
               <tr><td>4</td><td>Créer les pages du site et harmoniser leur présentation</td><td>Youcef, Gabin</td><td>Fait</td></tr>
-              <tr><td>5</td><td>Intégrer les cartes Google Maps et les contenus de découverte</td><td>Gabin, Yanis</td><td>Fait</td></tr>
+              <tr><td>5</td><td>Intégrer la carte Google Maps et les contenus de découverte</td><td>Gabin, Yanis</td><td>Fait</td></tr>
               <tr><td>6</td><td>Rédiger la charte numérique et informatique</td><td>Yacine, Yanis</td><td>Fait</td></tr>
               <tr><th colspan="4">Tests et livraison</th></tr>
               <tr><td>7</td><td>Tester l’affichage, l’accessibilité et les liens</td><td>Tous</td><td>Fait</td></tr>
@@ -232,7 +216,7 @@
           <li class="choix__item">
             <h3>Un site qui reste léger</h3>
             <p><span class="choix__tag">Problème</span> Photos, vidéos et bibliothèques alourdissent vite les pages.</p>
-            <p><span class="choix__tag choix__tag--ok">Solution</span> Illustrations légères, images adaptées et aucun contenu vidéo en lecture automatique. Voir <a href="charte.html#art-6">l’article 6 de notre charte</a>.</p>
+            <p><span class="choix__tag choix__tag--ok">Solution</span> Illustrations légères, images adaptées et aucun contenu vidéo en lecture automatique. Voir <a href="charte.html#maintenance-systemes">le point 9 de notre charte</a>.</p>
           </li>
         </ul>
       </div>
@@ -242,7 +226,7 @@
     <section id="outils" class="section" aria-labelledby="outils-titre">
       <div class="wrap">
         <h2 id="outils-titre">Les outils utilisés</h2>
-        <p class="section__intro">Leur usage dans le groupe est encadré par notre <a href="charte.html#art-4">charte numérique</a>.</p>
+        <p class="section__intro">Leur usage dans le groupe est encadré par notre <a href="charte.html">charte numérique</a>.</p>
 
         <!-- À ADAPTER : outils réellement utilisés par le groupe -->
         <dl class="outils">

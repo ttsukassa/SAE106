@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Découvrir Maubeuge — Empreinte écologique</title>
   <meta name="description" content="Tableau comparatif des actions de la Manufacture Ampère et du Zoo de Maubeuge pour réduire leur empreinte environnementale, et carte mentale d’autres pistes, avec les sources utilisées.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/empreinte.css">
 </head>
@@ -18,21 +15,9 @@
   <header class="site-header">
     <div class="wrap site-header__inner">
       <a class="brand" href="index.html">
-        <svg class="brand__mark" viewBox="30 26 340 340" aria-hidden="true" focusable="false">
-          <defs>
-            <linearGradient id="brand-arc" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#72AD2E"/>
-              <stop offset="0.55" stop-color="#F9B619"/>
-              <stop offset="1" stop-color="#F0831F"/>
-            </linearGradient>
-          </defs>
-          <path fill="url(#brand-arc)" d="M171.8 94.8 L171.8 72.7 L200.0 35.0 L228.2 72.7 L228.2 94.8 L264.7 112.4 L281.9 98.6 L329.0 97.1 L317.1 142.7 L299.8 156.5 L308.8 195.9 L330.3 200.8 L360.9 236.7 L317.8 255.8 L296.3 250.9 L271.0 282.5 L280.6 302.4 L271.6 348.7 L229.8 326.9 L220.2 307.0 L179.8 307.0 L170.2 326.9 L128.4 348.7 L119.4 302.4 L129.0 282.5 L103.7 250.9 L82.2 255.8 L39.1 236.7 L69.7 200.8 L91.2 195.9 L100.2 156.5 L82.9 142.7 L71.0 97.1 L118.1 98.6 L135.3 112.4 Z"/>
-          <path d="M40 262 C 95 238, 140 290, 200 270 S 305 240, 362 262" fill="none" stroke="#004366" stroke-width="26" stroke-linecap="round"/>
-        </svg>
+        <img class="brand__mark" src="img/logo.svg" alt="">
         <span>Découvrir Maubeuge</span>
       </a>
-
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
 
       <nav id="site-nav" class="site-nav" aria-label="Navigation principale">
         <ul>
@@ -49,24 +34,30 @@
 
   <main id="contenu" class="empreinte">
 
-    <h1>Empreinte écologique</h1>
-    <p class="intro">
-      Que font la <a href="organisations.html#ampere">Manufacture Ampère</a> et le
-      <a href="organisations.html#zoo">Zoo de Maubeuge</a> pour réduire leur impact sur
-      l'environnement ? On a comparé leurs actions domaine par domaine, puis on a
-      rassemblé d'autres idées dans une carte mentale.
-    </p>
-
-    <p class="sommaire">
-      Sur cette page :
-      <a href="#tableau">Tableau comparatif</a> -
-      <a href="#analyse">Notre analyse</a> -
-      <a href="#carte-mentale">Carte mentale</a> -
-      <a href="#sources">Sources</a>
-    </p>
+    <section class="page-head">
+      <div class="wrap">
+        <p class="page-head__kicker"><span class="page-head__num" aria-hidden="true">3</span>Onglet 3 sur 5</p>
+        <h1>Empreinte écologique</h1>
+        <p class="page-head__lead">
+          Que font la <a href="organisations.html#ampere">Manufacture Ampère</a> et le
+          <a href="organisations.html#zoo">Zoo de Maubeuge</a> pour réduire leur impact&nbsp;?
+          Comparez leurs actions et découvrez d’autres pistes.
+        </p>
+        <nav class="toc" aria-label="Sur cette page">
+          <ul>
+            <li><a href="#tableau">Comparaison</a></li>
+            <li><a href="#analyse">Notre analyse</a></li>
+            <li><a href="#carte-mentale">Pistes d’action</a></li>
+            <li><a href="#sources">Sources</a></li>
+          </ul>
+        </nav>
+      </div>
+    </section>
 
     <!-- TABLEAU COMPARATIF -->
-    <h2 id="tableau">1. Les actions, domaine par domaine</h2>
+    <section class="section" aria-labelledby="tableau">
+      <div class="wrap">
+    <h2 id="tableau">Les actions, domaine par domaine</h2>
     <p>
       Chaque case résume ce qu'on a trouvé dans des sources publiques. "Rien de publié"
       ne veut pas dire que rien n'est fait, seulement qu'on n'a trouvé aucune information vérifiable.
@@ -84,15 +75,19 @@
       <span class="non">Rien de publié</span>
     </p>
 
-    <div class="tableau-scroll">
+    <div class="table-wrap" role="region" aria-label="Tableau comparatif, faire défiler horizontalement si nécessaire" tabindex="0">
       <table class="comparatif">
+        <caption class="sr-only">Comparaison des actions environnementales documentées</caption>
+        <thead>
+          <tr>
+            <th scope="col">Domaine</th>
+            <th scope="col">Manufacture Ampère</th>
+            <th scope="col">Zoo de Maubeuge</th>
+          </tr>
+        </thead>
+        <tbody>
         <tr>
-          <th>Domaine</th>
-          <th>Manufacture Ampère</th>
-          <th>Zoo de Maubeuge</th>
-        </tr>
-        <tr>
-          <th>Management environnemental</th>
+          <th scope="row">Management environnemental</th>
           <td class="oui">
             Certifiée <b>ISO 14001</b> (management de l'environnement) et <b>ISO 50001</b> (management de l'énergie).
             <br><i>Source : Renault Group</i>
@@ -103,7 +98,7 @@
           </td>
         </tr>
         <tr>
-          <th>Énergie</th>
+          <th scope="row">Énergie</th>
           <td class="oui">
             <b>79 000 m²</b> d'ombrières photovoltaïques sur les parkings depuis 2012. Les fours de peinture sont chauffés à la <b>biomasse</b> (Dalkia). Les consommations sont suivies en continu par des outils numériques.
             <br><i>Source : France 3, LeMagIT, Renault Group</i>
@@ -113,7 +108,7 @@
           </td>
         </tr>
         <tr>
-          <th>Eau</th>
+          <th scope="row">Eau</th>
           <td class="oui">
             Recyclage des <b>eaux de pluie</b> depuis 2000.
             <br><i>Source : France 3</i>
@@ -123,7 +118,7 @@
           </td>
         </tr>
         <tr>
-          <th>Déchets et ressources</th>
+          <th scope="row">Déchets et ressources</th>
           <td class="oui">
             La biomasse des fours vient de <b>déchets de bois</b> (scieries, forêts, fabricants de palettes) : un déchet devient une source d'énergie.
             <br><i>Source : LeMagIT</i>
@@ -133,7 +128,7 @@
           </td>
         </tr>
         <tr>
-          <th>Biodiversité</th>
+          <th scope="row">Biodiversité</th>
           <td class="non">
             Aucune information sur la gestion des espaces verts d'un site de 83,6 ha.
           </td>
@@ -143,7 +138,7 @@
           </td>
         </tr>
         <tr>
-          <th>Sensibilisation</th>
+          <th scope="row">Sensibilisation</th>
           <td class="non">
             Aucune action publiée à destination des habitants ou des écoles.
           </td>
@@ -153,7 +148,7 @@
           </td>
         </tr>
         <tr>
-          <th>Produits et services</th>
+          <th scope="row">Produits et services</th>
           <td class="oui">
             Assemble des véhicules électriques depuis 2011 : plus de <b>36 500</b> en 2025 (Renault 4 et Kangoo E-Tech), soit environ un véhicule sur quatre.
             <br><i>Source : Renault Group</i>
@@ -162,11 +157,16 @@
             Pas d'offre mise en avant pour venir sans voiture ou pour une restauration locale.
           </td>
         </tr>
+        </tbody>
       </table>
     </div>
+      </div>
+    </section>
 
     <!-- ANALYSE -->
-    <h2 id="analyse">2. Ce que montre le tableau</h2>
+    <section class="section section--alt" aria-labelledby="analyse">
+      <div class="wrap prose">
+    <h2 id="analyse">Ce que montre le tableau</h2>
     <p>Deux organisations, deux manières très différentes d'agir pour l'environnement.</p>
 
     <h3>L'usine agit sur son fonctionnement</h3>
@@ -205,8 +205,13 @@
       </p>
     </div>
 
-    <!-- CARTE MENTALE -->
-    <h2 id="carte-mentale">3. D'autres moyens de réduire l'impact écologique</h2>
+      </div>
+    </section>
+
+    <!-- PISTES D'ACTION -->
+    <section id="carte-mentale" class="section" aria-labelledby="pistes-titre">
+      <div class="wrap">
+    <h2 id="pistes-titre">D’autres moyens de réduire l’impact</h2>
     <p>
       Des idées que les deux organisations pourraient essayer, inspirées de ce que font d'autres
       structures.
@@ -238,11 +243,6 @@
           <li>Trier plus finement les déchets de l'usine et du parc</li>
         </ul>
       </div>
-      <div class="centre">
-        <p class="fleches">&#8598; &#8593; &#8599;</p>
-        <p class="centre-carte">Réduire l'impact écologique</p>
-        <p class="fleches">&#8601; &#8595; &#8600;</p>
-      </div>
       <div class="branche">
         <h3>Mobilité</h3>
         <ul>
@@ -269,8 +269,13 @@
       </div>
     </div>
 
+      </div>
+    </section>
+
     <!-- SOURCES -->
-    <h2 id="sources">4. Sources</h2>
+    <section id="sources" class="section section--alt" aria-labelledby="sources-titre">
+      <div class="wrap">
+    <h2 id="sources-titre">Sources</h2>
     <p>Documents consultés en septembre 2026.</p>
 
     <h3>Manufacture Ampère</h3>
@@ -298,10 +303,21 @@
       <li>Et les sources de l'usine citées plus haut (France 3, LeMagIT, Renault Group, ADEME).</li>
     </ul>
 
-    <p class="navigation">
-      <a href="demarche.html">&lt;- Page précédente : Démarche</a>
-      <a href="charte.html">Page suivante : Charte numérique -&gt;</a>
-    </p>
+      </div>
+    </section>
+
+    <nav class="pager" aria-label="Onglets voisins">
+      <div class="wrap pager__inner">
+        <a class="pager__link pager__link--prev" href="demarche.html">
+          <span class="pager__dir"><span aria-hidden="true">←</span> Onglet précédent</span>
+          <span class="pager__title">2 · Démarche</span>
+        </a>
+        <a class="pager__link pager__link--next" href="charte.html">
+          <span class="pager__dir">Onglet suivant <span aria-hidden="true">→</span></span>
+          <span class="pager__title">4 · Charte numérique</span>
+        </a>
+      </div>
+    </nav>
 
   </main>
 
