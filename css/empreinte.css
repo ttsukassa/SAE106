@@ -1,223 +1,161 @@
-/* ==========================================================================
-   Onglet 3 — Empreinte écologique
-   ========================================================================== */
+/* Page Empreinte écologique */
 
-/* ---------- Bilan au-dessus du tableau ---------- */
-.scores {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+.empreinte {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.score {
-  padding: 1.25rem 1.5rem;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-m);
-  background: var(--color-bg-alt);
+.empreinte h1 {
+  color: #004366;
+  border-bottom: 3px solid #72AD2E;
+  padding-bottom: 10px;
 }
 
-.score p {
-  margin: 0;
+.empreinte h2 {
+  color: #004366;
+  margin-top: 40px;
 }
 
-.score__name {
-  font-weight: 600;
-  color: var(--color-muted);
+.empreinte h3 {
+  color: #313D4D;
+  margin-top: 20px;
 }
 
-.score__value {
-  font-family: var(--font-display);
-  font-size: 2.6rem;
-  font-weight: 700;
-  line-height: 1.1;
-  color: var(--color-primary);
+.intro {
+  font-size: 18px;
 }
 
-.score__value span {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--color-heading);
+.sommaire {
+  background-color: #F2F6F7;
+  padding: 10px;
+  border: 1px solid #D6DEE7;
 }
 
-/* Une case par domaine du tableau, dans le même ordre */
-.score__dots {
-  display: flex;
-  gap: 4px;
-  margin: 0.6rem 0 0.4rem;
-  padding: 0;
-  list-style: none;
+/* Bilan et légende */
+.bilan {
+  background-color: #F2F6F7;
+  border-left: 5px solid #004366;
+  padding: 10px;
 }
 
-.score__dots li {
-  flex: 1 1 0;
-  max-width: 2.5rem;
-  height: 10px;
-  border-radius: 3px;
-  background: var(--ardoise-100);
+.legende span {
+  padding: 3px 8px;
+  margin-left: 5px;
+  border: 1px solid #999;
 }
 
-.score__dots li.is-done {
-  background: var(--vert-600);
+/* Couleurs des cases (même couleurs pour la légende) */
+.oui {
+  background-color: #D6E7C2;
 }
 
-.score__dots li.is-part {
-  background: repeating-linear-gradient(135deg, var(--soleil-300) 0 4px, var(--soleil-100) 4px 8px);
+.partiel {
+  background-color: #FDE4A8;
 }
 
-.score__note {
-  font-size: 0.95rem;
-  color: var(--color-muted);
+.non {
+  background-color: #EEEEEE;
 }
 
-.scores__legend {
-  grid-column: 1 / -1;
+/* Tableau */
+.tableau-scroll {
+  overflow-x: auto;
+}
+
+.comparatif {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.comparatif th,
+.comparatif td {
+  border: 1px solid #999;
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.comparatif tr:first-child th {
+  background-color: #004366;
+  color: white;
+}
+
+.comparatif th {
+  background-color: #F2F6F7;
+  width: 160px;
+}
+
+.comparatif i {
+  font-size: 14px;
+  color: #5C6B7F;
+}
+
+/* Encadré attention */
+.attention {
+  background-color: #FFF4D6;
+  border: 2px solid #F9B619;
+  padding: 10px 15px;
+  margin-top: 20px;
+}
+
+.attention h3 {
+  margin-top: 0;
+}
+
+/* Carte mentale */
+.centre-carte {
+  width: 300px;
+  margin: 20px auto;
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  background-color: #72AD2E;
+  border-radius: 10px;
+}
+
+.carte {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin: 0;
+  gap: 15px;
 }
 
-/* ---------- Tableau comparatif ---------- */
-.eco thead th:first-child {
-  width: 11rem;
+.branche {
+  width: 30%;
+  flex-grow: 1;
+  border: 2px solid #72AD2E;
+  border-radius: 10px;
+  padding: 10px;
 }
 
-.eco th[scope="row"] {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--color-heading);
+.branche h3 {
+  margin-top: 0;
+  color: #43671B;
 }
 
-.eco td p {
-  margin: 0.5rem 0 0;
-  max-width: 52ch;
+/* Liens vers les autres pages */
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 15px;
+  border-top: 1px solid #D6DEE7;
 }
 
-.eco td .eco__src {
-  font-size: 0.875rem;
-  color: var(--color-muted);
-}
-
-.eco__src::before {
-  content: "Source : ";
-}
-
-.eco tbody tr:nth-child(even) > * {
-  background: var(--ardoise-50);
-}
-
-/* Petit écran : chaque ligne devient une carte */
-@media (max-width: 44rem) {
-  .eco,
-  .eco tbody,
-  .eco tr,
-  .eco th,
-  .eco td {
-    display: block;
+/* Téléphone */
+@media (max-width: 700px) {
+  .branche {
+    width: 100%;
   }
 
-  .eco thead {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
+  .centre-carte {
+    width: auto;
   }
 
-  .eco tr {
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .eco tbody tr:last-child {
-    border-bottom: 0;
-  }
-
-  .table-wrap .eco th,
-  .table-wrap .eco td {
-    border-bottom: 0;
-  }
-
-  .eco th[scope="row"] {
-    padding-bottom: 0.25rem;
-  }
-
-  .eco td {
-    padding-top: 0.5rem;
-  }
-
-  .eco td::before {
-    content: attr(data-org);
-    display: block;
-    margin-bottom: 0.35rem;
-    font-weight: 600;
-    color: var(--color-heading);
-  }
-}
-
-/* ---------- Analyse ---------- */
-.analyse {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2rem clamp(2rem, 5vw, 4rem);
-}
-
-.analyse__bloc h3 {
-  font-size: 1.35rem;
-  margin-bottom: 0.6rem;
-}
-
-.analyse__bloc p {
-  max-width: 62ch;
-}
-
-/* Encadré d'avertissement (style « alerte » de la charte couleurs) */
-.analyse__alerte {
-  grid-column: 1 / -1;
-  padding: 1.25rem 1.5rem;
-  border-left: 4px solid var(--soleil-300);
-  border-radius: var(--radius-s);
-  background: var(--soleil-50);
-  color: var(--soleil-900);
-}
-
-.analyse__alerte h3 {
-  font-size: 1.15rem;
-  margin-bottom: 0.4rem;
-  color: var(--soleil-900);
-}
-
-.analyse__alerte p {
-  max-width: 80ch;
-  margin: 0;
-}
-
-/* ---------- Carte mentale : branche des sources ---------- */
-.mindmap__branch--sources ul {
-  columns: 2 22rem;
-  column-gap: 2.5rem;
-}
-
-.mindmap__branch--sources li,
-.mindmap__branch--sources li + li {
-  break-inside: avoid;
-  margin: 0 0 0.4rem;
-}
-
-.mindmap__branch--sources a {
-  overflow-wrap: anywhere;
-}
-
-/* ---------- Responsive ---------- */
-@media (max-width: 52rem) {
-  .analyse {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 36rem) {
-  .scores {
-    grid-template-columns: 1fr;
+  .navigation {
+    flex-direction: column;
+    gap: 10px;
   }
 }
