@@ -86,3 +86,159 @@
 .branche li + li {
   margin-top: 0.4rem;
 }
+
+/* ---------- Carte mentale ---------- */
+.mindmap {
+  --mm-gap: 3rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(11rem, 14rem) minmax(0, 1fr);
+  column-gap: var(--mm-gap);
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.mm__centre {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.25rem 1rem;
+  border-radius: var(--radius-l);
+  background: var(--color-primary);
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(0, 26, 42, 0.2);
+}
+
+.mm__centre strong {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+
+.mm__centre span {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+.mm__col {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Colonne verticale qui relie les branches au centre */
+.mm__col::before {
+  content: "";
+  position: absolute;
+  top: 1.6rem;
+  bottom: 1.6rem;
+  width: 3px;
+  background: var(--ardoise-300);
+}
+.mm__col--g::before { right: calc(var(--mm-gap) / -2 - 1px); }
+.mm__col--d::before { left: calc(var(--mm-gap) / -2 - 1px); }
+
+/* Traits entre le centre et les deux colonnes */
+.mm__centre::before,
+.mm__centre::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: calc(var(--mm-gap) / 2);
+  height: 3px;
+  background: var(--ardoise-300);
+}
+.mm__centre::before { right: 100%; }
+.mm__centre::after { left: 100%; }
+
+.mm__branche {
+  --mm: var(--vert-600);
+  position: relative;
+  padding: 0.9rem 1.1rem 1rem;
+  border: 1px solid var(--color-border);
+  border-top: 5px solid var(--mm);
+  border-radius: var(--radius-m);
+  background: #fff;
+}
+
+/* Trait de la branche vers la colonne */
+.mm__branche::after {
+  content: "";
+  position: absolute;
+  top: 1.1rem;
+  width: calc(var(--mm-gap) / 2);
+  height: 3px;
+  background: var(--mm);
+}
+.mm__col--g .mm__branche::after { left: 100%; }
+.mm__col--d .mm__branche::after { right: 100%; }
+
+.mm__b1 { --mm: var(--orange-400); }
+.mm__b2 { --mm: var(--sambre-400); }
+.mm__b3 { --mm: var(--vert-400); }
+.mm__b4 { --mm: var(--bleu-600); }
+.mm__b5 { --mm: var(--vert-600); }
+.mm__b6 { --mm: var(--orange-600); }
+.mm__b7 { --mm: var(--ardoise-600); }
+
+.mm__branche h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.1rem;
+  color: var(--color-primary);
+}
+
+.mm__feuilles {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.93rem;
+}
+
+.mm__feuilles li {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.mm__feuilles li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--mm);
+}
+
+.mm__lien {
+  margin: 0.6rem 0 0;
+  font-size: 0.93rem;
+}
+
+@media (max-width: 62rem) {
+  .mindmap {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 1rem;
+  }
+  .mm__centre { order: -1; }
+  .mm__centre::before,
+  .mm__centre::after,
+  .mm__col::before,
+  .mm__branche::after { display: none; }
+}
+
+.mm__col--g { grid-column: 1; grid-row: 1; }
+.mm__centre { grid-column: 2; grid-row: 1; }
+.mm__col--d { grid-column: 3; grid-row: 1; }
+
+@media (max-width: 62rem) {
+  .mm__centre,
+  .mm__col--g,
+  .mm__col--d { grid-column: 1; grid-row: auto; }
+}
