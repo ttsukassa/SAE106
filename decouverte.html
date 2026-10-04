@@ -117,29 +117,140 @@
       <div class="wrap">
         <h2 id="carte-titre">Les lieux à voir</h2>
         <p class="section__intro">
-          La carte montre le centre de Maubeuge. Pour localiser un lieu précis, ouvrez-le dans
-          Google Maps depuis la liste.
+          Choisissez un lieu pour le voir sur la carte. Chaque fiche permet d’ouvrir Google Maps
+          ou de lancer un itinéraire.
         </p>
 
-        <div class="explorer">
-          <div class="explorer__map">
-            <details class="map-disclosure">
-              <summary>Afficher la carte générale (Google Maps)</summary>
-              <div id="map" class="map" role="region" aria-label="Carte générale de Maubeuge">
-                <iframe title="Carte générale de Maubeuge sur Google Maps" src="https://www.google.com/maps?q=50.2802,3.9738&z=14&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <div class="atlas">
+          <input class="atlas__radio" type="radio" name="lieu" id="lieu-0">
+          <input class="atlas__radio" type="radio" name="lieu" id="lieu-1">
+          <input class="atlas__radio" type="radio" name="lieu" id="lieu-2">
+          <input class="atlas__radio" type="radio" name="lieu" id="lieu-3">
+          <input class="atlas__radio" type="radio" name="lieu" id="lieu-4">
+          <input class="atlas__radio" type="radio" name="lieu" id="lieu-5">
+          <input class="atlas__radio" type="radio" name="lieu" id="lieu-6">
+          <ul class="atlas__nav" aria-label="Choisir un lieu">
+              <li><label class="atlas__choix" for="lieu-0"><span class="atlas__nom">Vue d’ensemble</span><span class="tag tag--patrimoine">Centre de Maubeuge</span></label></li>
+              <li><label class="atlas__choix" for="lieu-1"><span class="atlas__nom">Porte de Mons et remparts</span><span class="tag tag--patrimoine">Patrimoine</span></label></li>
+              <li><label class="atlas__choix" for="lieu-2"><span class="atlas__nom">Église Saint-Pierre-Saint-Paul</span><span class="tag tag--patrimoine">Patrimoine</span></label></li>
+              <li><label class="atlas__choix" for="lieu-3"><span class="atlas__nom">Zoo de Maubeuge</span><span class="tag tag--nature">Nature et loisirs</span></label></li>
+              <li><label class="atlas__choix" for="lieu-4"><span class="atlas__nom">Le Manège</span><span class="tag tag--culture">Culture</span></label></li>
+              <li><label class="atlas__choix" for="lieu-5"><span class="atlas__nom">Fort de Leveau</span><span class="tag tag--memoire">Mémoire</span></label></li>
+              <li><label class="atlas__choix" for="lieu-6"><span class="atlas__nom">Manufacture Ampère</span><span class="tag tag--economie">Économie</span></label></li>
+          </ul>
+
+          <div class="atlas__panels">
+            <div class="atlas__vide">
+              <span class="atlas__pin" aria-hidden="true"></span>
+              <p><strong>Choisissez un lieu dans la liste</strong> pour afficher sa carte.</p>
+              <p class="atlas__note">La carte est fournie par Google et ne se charge qu’une fois un lieu choisi, pour garder la page légère.</p>
+            </div>
+            <article class="atlas__panel" id="panneau-0">
+              <div class="atlas__cadre">
+                <iframe title="Carte Google Maps : Vue d’ensemble" src="https://www.google.com/maps?q=50.2802,3.9738&amp;z=14&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
               </div>
-            </details>
+              <div class="atlas__infos">
+                <div>
+                  <h3>Vue d’ensemble</h3>
+                  <p>Le centre-ville, sur les deux rives de la Sambre, à une dizaine de kilomètres de la frontière belge.</p>
+                </div>
+                <p class="atlas__actions">
+                  <a class="btn-lien btn-lien--plein" href="https://www.google.com/maps/search/?api=1&amp;query=Maubeuge" target="_blank" rel="noopener noreferrer">Ouvrir dans Google Maps<span class="sr-only"> (nouvel onglet)</span></a>
+                  <a class="btn-lien" href="https://www.google.com/maps/dir/?api=1&amp;destination=Maubeuge" target="_blank" rel="noopener noreferrer">Itinéraire<span class="sr-only"> (nouvel onglet)</span></a>
+                </p>
+              </div>
+            </article>
+            <article class="atlas__panel" id="panneau-1">
+              <div class="atlas__cadre">
+                <iframe title="Carte Google Maps : Porte de Mons et remparts" src="https://www.google.com/maps?q=Porte%20de%20Mons%20Maubeuge&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+              </div>
+              <div class="atlas__infos">
+                <div>
+                  <h3>Porte de Mons et remparts</h3>
+                  <p>Les fortifications tracées par Vauban en 1679. La Porte de Mons a été bâtie en 1682.</p>
+                </div>
+                <p class="atlas__actions">
+                  <a class="btn-lien btn-lien--plein" href="https://www.google.com/maps/search/?api=1&amp;query=Porte%20de%20Mons%20Maubeuge" target="_blank" rel="noopener noreferrer">Ouvrir dans Google Maps<span class="sr-only"> (nouvel onglet)</span></a>
+                  <a class="btn-lien" href="https://www.google.com/maps/dir/?api=1&amp;destination=Porte%20de%20Mons%20Maubeuge" target="_blank" rel="noopener noreferrer">Itinéraire<span class="sr-only"> (nouvel onglet)</span></a>
+                </p>
+              </div>
+            </article>
+            <article class="atlas__panel" id="panneau-2">
+              <div class="atlas__cadre">
+                <iframe title="Carte Google Maps : Église Saint-Pierre-Saint-Paul" src="https://www.google.com/maps?q=Eglise%20Saint-Pierre-Saint-Paul%20Maubeuge&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+              </div>
+              <div class="atlas__infos">
+                <div>
+                  <h3>Église Saint-Pierre-Saint-Paul</h3>
+                  <p>Église en béton armé de la reconstruction d’André Lurçat, classée monument historique.</p>
+                </div>
+                <p class="atlas__actions">
+                  <a class="btn-lien btn-lien--plein" href="https://www.google.com/maps/search/?api=1&amp;query=Eglise%20Saint-Pierre-Saint-Paul%20Maubeuge" target="_blank" rel="noopener noreferrer">Ouvrir dans Google Maps<span class="sr-only"> (nouvel onglet)</span></a>
+                  <a class="btn-lien" href="https://www.google.com/maps/dir/?api=1&amp;destination=Eglise%20Saint-Pierre-Saint-Paul%20Maubeuge" target="_blank" rel="noopener noreferrer">Itinéraire<span class="sr-only"> (nouvel onglet)</span></a>
+                </p>
+              </div>
+            </article>
+            <article class="atlas__panel" id="panneau-3">
+              <div class="atlas__cadre">
+                <iframe title="Carte Google Maps : Zoo de Maubeuge" src="https://www.google.com/maps?q=Zoo%20de%20Maubeuge&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+              </div>
+              <div class="atlas__infos">
+                <div>
+                  <h3>Zoo de Maubeuge</h3>
+                  <p>Environ 300 animaux des cinq continents, installés au pied des fortifications depuis 1955.</p>
+                </div>
+                <p class="atlas__actions">
+                  <a class="btn-lien btn-lien--plein" href="https://www.google.com/maps/search/?api=1&amp;query=Zoo%20de%20Maubeuge" target="_blank" rel="noopener noreferrer">Ouvrir dans Google Maps<span class="sr-only"> (nouvel onglet)</span></a>
+                  <a class="btn-lien" href="https://www.google.com/maps/dir/?api=1&amp;destination=Zoo%20de%20Maubeuge" target="_blank" rel="noopener noreferrer">Itinéraire<span class="sr-only"> (nouvel onglet)</span></a>
+                </p>
+              </div>
+            </article>
+            <article class="atlas__panel" id="panneau-4">
+              <div class="atlas__cadre">
+                <iframe title="Carte Google Maps : Le Manège" src="https://www.google.com/maps?q=Le%20Man%C3%A8ge%20Maubeuge&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+              </div>
+              <div class="atlas__infos">
+                <div>
+                  <h3>Le Manège</h3>
+                  <p>Scène nationale installée dans un manège militaire de 1831, ouverte en 1983.</p>
+                </div>
+                <p class="atlas__actions">
+                  <a class="btn-lien btn-lien--plein" href="https://www.google.com/maps/search/?api=1&amp;query=Le%20Man%C3%A8ge%20Maubeuge" target="_blank" rel="noopener noreferrer">Ouvrir dans Google Maps<span class="sr-only"> (nouvel onglet)</span></a>
+                  <a class="btn-lien" href="https://www.google.com/maps/dir/?api=1&amp;destination=Le%20Man%C3%A8ge%20Maubeuge" target="_blank" rel="noopener noreferrer">Itinéraire<span class="sr-only"> (nouvel onglet)</span></a>
+                </p>
+              </div>
+            </article>
+            <article class="atlas__panel" id="panneau-5">
+              <div class="atlas__cadre">
+                <iframe title="Carte Google Maps : Fort de Leveau" src="https://www.google.com/maps?q=Fort%20de%20Leveau%20Feignies&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+              </div>
+              <div class="atlas__infos">
+                <div>
+                  <h3>Fort de Leveau</h3>
+                  <p>Fort près de Feignies, lieu de mémoire des guerres, avec un musée.</p>
+                </div>
+                <p class="atlas__actions">
+                  <a class="btn-lien btn-lien--plein" href="https://www.google.com/maps/search/?api=1&amp;query=Fort%20de%20Leveau%20Feignies" target="_blank" rel="noopener noreferrer">Ouvrir dans Google Maps<span class="sr-only"> (nouvel onglet)</span></a>
+                  <a class="btn-lien" href="https://www.google.com/maps/dir/?api=1&amp;destination=Fort%20de%20Leveau%20Feignies" target="_blank" rel="noopener noreferrer">Itinéraire<span class="sr-only"> (nouvel onglet)</span></a>
+                </p>
+              </div>
+            </article>
+            <article class="atlas__panel" id="panneau-6">
+              <div class="atlas__cadre">
+                <iframe title="Carte Google Maps : Manufacture Ampère" src="https://www.google.com/maps?q=Avenue%20Andr%C3%A9%20Chausson%20Maubeuge&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+              </div>
+              <div class="atlas__infos">
+                <div>
+                  <h3>Manufacture Ampère</h3>
+                  <p>L’usine présentée dans l’onglet Organisations, dans la zone industrielle de Grévaux-les-Guides.</p>
+                </div>
+                <p class="atlas__actions">
+                  <a class="btn-lien btn-lien--plein" href="https://www.google.com/maps/search/?api=1&amp;query=Avenue%20Andr%C3%A9%20Chausson%20Maubeuge" target="_blank" rel="noopener noreferrer">Ouvrir dans Google Maps<span class="sr-only"> (nouvel onglet)</span></a>
+                  <a class="btn-lien" href="https://www.google.com/maps/dir/?api=1&amp;destination=Avenue%20Andr%C3%A9%20Chausson%20Maubeuge" target="_blank" rel="noopener noreferrer">Itinéraire<span class="sr-only"> (nouvel onglet)</span></a>
+                </p>
+              </div>
+            </article>
           </div>
-
-          <div class="explorer__side">
-            <ul class="places" aria-label="Liste des lieux">
-              <li><a class="place" href="https://www.google.com/maps/search/?api=1&amp;query=Porte%20de%20Mons%20Maubeuge" target="_blank" rel="noopener noreferrer"><span class="place__name">Porte de Mons et remparts</span><span class="tag tag--patrimoine">Patrimoine</span></a></li>
-              <li><a class="place" href="https://www.google.com/maps/search/?api=1&amp;query=Zoo%20de%20Maubeuge" target="_blank" rel="noopener noreferrer"><span class="place__name">Zoo de Maubeuge</span><span class="tag tag--nature">Nature et loisirs</span></a></li>
-              <li><a class="place" href="https://www.google.com/maps/search/?api=1&amp;query=Le%20Man%C3%A8ge%20Maubeuge" target="_blank" rel="noopener noreferrer"><span class="place__name">Le Manège</span><span class="tag tag--culture">Culture</span></a></li>
-              <li><a class="place" href="https://www.google.com/maps/search/?api=1&amp;query=Fort%20de%20Leveau%20Feignies" target="_blank" rel="noopener noreferrer"><span class="place__name">Fort de Leveau</span><span class="tag tag--memoire">Mémoire</span></a></li>
-            </ul>
-          </div>
-
         </div>
       </div>
     </section>

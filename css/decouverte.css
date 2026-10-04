@@ -80,90 +80,270 @@
   padding: clamp(1.25rem, 3vw, 2rem);
 }
 
-/* ---------- Carte des lieux ---------- */
-.explorer {
+/* ---------- Carte des lieux (HTML + CSS, sans JavaScript) ---------- */
+.atlas {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 21rem;
-  grid-template-areas: "map side";
+  grid-template-columns: 19rem minmax(0, 1fr);
+  grid-template-areas: "nav panels";
   gap: 1.5rem;
   align-items: start;
 }
 
-.explorer__map {
-  grid-area: map;
+/* Les boutons radio pilotent l'affichage ; ils restent accessibles au clavier */
+.atlas__radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  opacity: 0;
+  overflow: hidden;
 }
 
-.explorer__side {
-  grid-area: side;
+.atlas__nav {
+  grid-area: nav;
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.atlas__choix {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 0.15rem;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-left: 5px solid var(--ardoise-100);
+  border-radius: var(--radius-m);
+  background: #fff;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-.map {
-  height: clamp(22rem, 55vh, 32rem);
+.atlas__choix:hover {
+  background: var(--bleu-50);
+  border-left-color: var(--sambre-400);
+}
+
+.atlas__nom {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.3;
+  color: var(--color-heading);
+}
+
+.atlas__panels {
+  grid-area: panels;
+  min-width: 0;
+}
+
+.atlas__panel {
+  display: none;
+  overflow: hidden;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-m);
-  background: var(--bleu-50);
-  overflow: hidden;
-  z-index: 0;
+  background: #fff;
 }
 
-.map iframe {
+.atlas__cadre {
+  height: clamp(20rem, 52vh, 30rem);
+  background: var(--bleu-50);
+}
+
+.atlas__cadre iframe {
+  display: block;
   width: 100%;
   height: 100%;
   border: 0;
 }
 
-.map-disclosure summary {
+.atlas__infos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.atlas__infos h3 {
+  margin: 0 0 0.2rem;
+  font-size: 1.25rem;
+}
+
+.atlas__infos p {
+  margin: 0;
+  max-width: 46ch;
+}
+
+.atlas__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.btn-lien {
   display: inline-flex;
-  margin-bottom: 1rem;
-  padding: 0.6rem 0.9rem;
-  border: 1px solid var(--color-border);
+  align-items: center;
+  padding: 0.55rem 0.95rem;
+  border: 2px solid var(--color-primary);
   border-radius: var(--radius-s);
   background: #fff;
   color: var(--color-primary);
   font-weight: 600;
-  cursor: pointer;
+  text-decoration: none;
 }
 
-/* Liste des lieux */
-.places {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid var(--color-border);
+.btn-lien:hover { background: var(--bleu-50); }
+
+.btn-lien--plein {
+  background: var(--color-primary);
+  color: #fff;
 }
 
-.places li {
-  border-bottom: 1px solid var(--color-border);
-}
+.btn-lien--plein:hover { background: var(--bleu-800); }
 
-.place {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.15rem;
-  width: 100%;
-  padding: 0.8rem 0.75rem;
-  border: 0;
-  border-radius: var(--radius-s);
-  background: none;
-  font: inherit;
-  text-align: left;
-  color: var(--color-heading);
-  transition: background-color 0.15s ease;
-}
-
-.place__name {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.075rem;
-  line-height: 1.3;
-}
-
-.place:hover {
+/* État de départ : aucune carte chargée */
+.atlas__vide {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 0.6rem;
+  min-height: clamp(20rem, 52vh, 30rem);
+  padding: 2rem 1.5rem;
+  border: 2px dashed var(--ardoise-300);
+  border-radius: var(--radius-m);
   background: var(--bleu-50);
+  text-align: center;
+}
+
+.atlas__vide p { margin: 0; }
+
+.atlas__note {
+  max-width: 40ch;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.atlas__pin {
+  position: relative;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50% 50% 50% 0;
+  background: var(--color-accent);
+  transform: rotate(-45deg);
+}
+
+.atlas__pin::after {
+  content: "";
+  position: absolute;
+  inset: 0.8rem;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.atlas__radio:checked ~ .atlas__panels .atlas__vide { display: none; }
+
+/* Catégorie supplémentaire */
+.tag--economie { color: var(--sambre-700); }
+
+#lieu-0:checked ~ .atlas__panels #panneau-0 { display: block; }
+#lieu-0:checked ~ .atlas__nav label[for="lieu-0"] {
+  background: var(--bleu-50);
+  border-color: var(--color-primary);
+  border-left-color: var(--color-accent);
+  box-shadow: 0 1px 4px rgba(0, 26, 42, 0.12);
+}
+#lieu-0:focus-visible ~ .atlas__nav label[for="lieu-0"] {
+  outline: 3px solid var(--color-link);
+  outline-offset: 2px;
+}
+#lieu-1:checked ~ .atlas__panels #panneau-1 { display: block; }
+#lieu-1:checked ~ .atlas__nav label[for="lieu-1"] {
+  background: var(--bleu-50);
+  border-color: var(--color-primary);
+  border-left-color: var(--color-accent);
+  box-shadow: 0 1px 4px rgba(0, 26, 42, 0.12);
+}
+#lieu-1:focus-visible ~ .atlas__nav label[for="lieu-1"] {
+  outline: 3px solid var(--color-link);
+  outline-offset: 2px;
+}
+#lieu-2:checked ~ .atlas__panels #panneau-2 { display: block; }
+#lieu-2:checked ~ .atlas__nav label[for="lieu-2"] {
+  background: var(--bleu-50);
+  border-color: var(--color-primary);
+  border-left-color: var(--color-accent);
+  box-shadow: 0 1px 4px rgba(0, 26, 42, 0.12);
+}
+#lieu-2:focus-visible ~ .atlas__nav label[for="lieu-2"] {
+  outline: 3px solid var(--color-link);
+  outline-offset: 2px;
+}
+#lieu-3:checked ~ .atlas__panels #panneau-3 { display: block; }
+#lieu-3:checked ~ .atlas__nav label[for="lieu-3"] {
+  background: var(--bleu-50);
+  border-color: var(--color-primary);
+  border-left-color: var(--color-accent);
+  box-shadow: 0 1px 4px rgba(0, 26, 42, 0.12);
+}
+#lieu-3:focus-visible ~ .atlas__nav label[for="lieu-3"] {
+  outline: 3px solid var(--color-link);
+  outline-offset: 2px;
+}
+#lieu-4:checked ~ .atlas__panels #panneau-4 { display: block; }
+#lieu-4:checked ~ .atlas__nav label[for="lieu-4"] {
+  background: var(--bleu-50);
+  border-color: var(--color-primary);
+  border-left-color: var(--color-accent);
+  box-shadow: 0 1px 4px rgba(0, 26, 42, 0.12);
+}
+#lieu-4:focus-visible ~ .atlas__nav label[for="lieu-4"] {
+  outline: 3px solid var(--color-link);
+  outline-offset: 2px;
+}
+#lieu-5:checked ~ .atlas__panels #panneau-5 { display: block; }
+#lieu-5:checked ~ .atlas__nav label[for="lieu-5"] {
+  background: var(--bleu-50);
+  border-color: var(--color-primary);
+  border-left-color: var(--color-accent);
+  box-shadow: 0 1px 4px rgba(0, 26, 42, 0.12);
+}
+#lieu-5:focus-visible ~ .atlas__nav label[for="lieu-5"] {
+  outline: 3px solid var(--color-link);
+  outline-offset: 2px;
+}
+#lieu-6:checked ~ .atlas__panels #panneau-6 { display: block; }
+#lieu-6:checked ~ .atlas__nav label[for="lieu-6"] {
+  background: var(--bleu-50);
+  border-color: var(--color-primary);
+  border-left-color: var(--color-accent);
+  box-shadow: 0 1px 4px rgba(0, 26, 42, 0.12);
+}
+#lieu-6:focus-visible ~ .atlas__nav label[for="lieu-6"] {
+  outline: 3px solid var(--color-link);
+  outline-offset: 2px;
+}
+
+@media (max-width: 52rem) {
+  .atlas {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "nav" "panels";
+  }
+  /* La liste devient une bande à faire défiler sur téléphone */
+  .atlas__nav {
+    display: flex;
+    gap: 0.6rem;
+    overflow-x: auto;
+    padding-bottom: 0.4rem;
+    scroll-snap-type: x proximity;
+  }
+  .atlas__nav li { flex: none; scroll-snap-align: start; }
+  .atlas__choix { min-width: 11rem; height: 100%; }
+  .atlas__infos { flex-direction: column; align-items: flex-start; }
 }
 
 /* ---------- Culture ---------- */

@@ -1,6 +1,6 @@
 # Découvrir Maubeuge — SAE 1.06
 
-Le site est consultable sans JavaScript : les interactions utilisent HTML et CSS natifs (`details`, liens et mise en page responsive). Les polices et le logo sont stockés dans le projet. La carte Google Maps ne se charge que si le visiteur l’ouvre.
+Le site est consultable sans JavaScript : les interactions utilisent HTML et CSS natifs (`details`, boutons radio stylés, liens et mise en page responsive). Les polices et le logo sont stockés dans le projet. La carte Google Maps ne se charge qu’une fois un lieu choisi par le visiteur.
 
 Ouvrir `index.html` dans un navigateur. La connexion internet n’est nécessaire que pour afficher la carte ou ouvrir les liens externes.
 
@@ -14,7 +14,7 @@ Ouvrir `index.html` dans un navigateur. La connexion internet n’est nécessair
 - `img/logo.svg` : logo partagé par toutes les pages
 - `css/style.css` : styles communs à TOUTES les pages (couleurs de la palette, en-tête, pied de page, boutons, en-tête de page, carte mentale, graphiques en barres, navigation entre onglets)
 - `css/<page>.css` : styles propres à chaque page
-- La carte de `decouverte.html` utilise Google Maps intégré, mais reste fermée tant que le visiteur ne la demande pas.
+- La carte de `decouverte.html` utilise Google Maps intégré (une carte par lieu, choisie en CSS seul), et ne charge rien tant que le visiteur n’a pas choisi un lieu.
 
 ## À compléter avant le dépôt
 1. **Noms du groupe** — les cinq créateurs sont déjà renseignés dans les pages du site,
