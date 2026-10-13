@@ -17,7 +17,6 @@ Site web realise dans le cadre de la SAE 1.06. Il presente Maubeuge, ses organis
 - CSS3
 - Google Maps integre dans `decouverte.html`
 
-Aucun JavaScript n'est necessaire pour consulter le site.
 
 ## Utilisation
 
@@ -34,7 +33,6 @@ Ouvrir `index.html` directement dans un navigateur. La connexion internet est ne
 - `css/style.css` : styles communs
 - `css/<page>.css` : styles propres a chaque page
 - `img/logo.svg` : logo partage entre les pages
-- `LISEZMOI.md` : notes de maintenance et consignes de personnalisation
 
 ## Personnalisation
 
